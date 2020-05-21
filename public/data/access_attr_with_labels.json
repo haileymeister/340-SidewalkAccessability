@@ -1,0 +1,1440 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30975341796875,
+          47.652496337890625
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30975341796875,
+          47.652496337890625
+        ]
+      },
+      "properties": {
+        "attribute_id": 21700015,
+        "label_type": "NoCurbRamp",
+        "neighborhood": "University District",
+        "severity": 5,
+        "is_temporary": false,
+        "label_id": 77278,
+        "gsv_panorama_id": "JRnytZSI8eqUiZm_fsvToA",
+        "heading": 230.5736541748047,
+        "pitch": -35,
+        "zoom": 1,
+        "canvas_x": 467,
+        "canvas_y": 304,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 5,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30645751953125,
+          47.65229034423828
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30645751953125,
+          47.65229034423828
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699428,
+        "label_type": "SurfaceProblem",
+        "neighborhood": "University District",
+        "severity": 2,
+        "is_temporary": false,
+        "label_id": 77290,
+        "gsv_panorama_id": "d-2jJ2MJB1ePHEdIsZZyEQ",
+        "heading": 280.5,
+        "pitch": -13.220982551574707,
+        "zoom": 3,
+        "canvas_x": 289,
+        "canvas_y": 219,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 2,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3052978515625,
+          47.6535758972168
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3052978515625,
+          47.6535758972168
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698543,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 1,
+        "is_temporary": false,
+        "label_id": 77298,
+        "gsv_panorama_id": "uxmSWY32yW1o7cWzWp2BqA",
+        "heading": 248.91294860839844,
+        "pitch": -17.379465103149414,
+        "zoom": 2,
+        "canvas_x": 244,
+        "canvas_y": 180,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 1,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30460357666016,
+          47.65102005004883
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30460357666016,
+          47.65102005004883
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699671,
+        "label_type": "Obstacle",
+        "neighborhood": "University District",
+        "severity": 2,
+        "is_temporary": false,
+        "label_id": 31280,
+        "gsv_panorama_id": "mQ6MUW_lCGKaLwFUd1IuCg",
+        "heading": 30,
+        "pitch": -19.75,
+        "zoom": 1,
+        "canvas_x": 304,
+        "canvas_y": 227,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 2,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30785369873047,
+          47.65058517456055
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30785369873047,
+          47.65058517456055
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699657,
+        "label_type": "Obstacle",
+        "neighborhood": "University District",
+        "severity": 2,
+        "is_temporary": true,
+        "label_id": 31321,
+        "gsv_panorama_id": "x41J6SPXmyhWHxOEanQaEg",
+        "heading": 243.1875,
+        "pitch": -19.0625,
+        "zoom": 1,
+        "canvas_x": 473,
+        "canvas_y": 199,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 2,
+        "label_is_temporary": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.2917251586914,
+          47.661293029785156
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.291748046875,
+          47.661293029785156
+        ]
+      },
+      "properties": {
+        "attribute_id": 21692737,
+        "label_type": "SurfaceProblem",
+        "neighborhood": "Bryant",
+        "severity": 4,
+        "is_temporary": false,
+        "label_id": 31322,
+        "gsv_panorama_id": "kcYZQpca_i8Vcpq5Mo2Azg",
+        "heading": 21.1875,
+        "pitch": -13.8125,
+        "zoom": 1,
+        "canvas_x": 112,
+        "canvas_y": 302,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 3,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.29182434082031,
+          47.661075592041016
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.29182434082031,
+          47.661075592041016
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699375,
+        "label_type": "SurfaceProblem",
+        "neighborhood": "University District",
+        "severity": 2,
+        "is_temporary": false,
+        "label_id": 31324,
+        "gsv_panorama_id": "kcYZQpca_i8Vcpq5Mo2Azg",
+        "heading": 173.8125,
+        "pitch": -9.5,
+        "zoom": 1,
+        "canvas_x": 546,
+        "canvas_y": 227,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 2,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.29139709472656,
+          47.661277770996094
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.2913818359375,
+          47.66127014160156
+        ]
+      },
+      "properties": {
+        "attribute_id": 21692834,
+        "label_type": "Obstacle",
+        "neighborhood": "Bryant",
+        "severity": 4,
+        "is_temporary": true,
+        "label_id": 31326,
+        "gsv_panorama_id": "vvHA4BwzB6COHgJaJLjw8g",
+        "heading": 6,
+        "pitch": -33.5,
+        "zoom": 1,
+        "canvas_x": 452,
+        "canvas_y": 189,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 2,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.29142761230469,
+          47.66128921508789
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.29142761230469,
+          47.66128921508789
+        ]
+      },
+      "properties": {
+        "attribute_id": 21691846,
+        "label_type": "CurbRamp",
+        "neighborhood": "Bryant",
+        "severity": 2,
+        "is_temporary": false,
+        "label_id": 31328,
+        "gsv_panorama_id": "vvHA4BwzB6COHgJaJLjw8g",
+        "heading": 345.75,
+        "pitch": -23.25,
+        "zoom": 1,
+        "canvas_x": 367,
+        "canvas_y": 213,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 2,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30261993408203,
+          47.65818405151367
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30261993408203,
+          47.658172607421875
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699922,
+        "label_type": "NoCurbRamp",
+        "neighborhood": "University District",
+        "severity": 4,
+        "is_temporary": false,
+        "label_id": 6236,
+        "gsv_panorama_id": "w_Qh_9HQeH5tMthn4TlrUg",
+        "heading": 45.45535659790039,
+        "pitch": -15.339285850524902,
+        "zoom": 2,
+        "canvas_x": 269,
+        "canvas_y": 214,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 3,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30260467529297,
+          47.65810775756836
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30260467529297,
+          47.65810775756836
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698220,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 2,
+        "is_temporary": false,
+        "label_id": 6237,
+        "gsv_panorama_id": "w_Qh_9HQeH5tMthn4TlrUg",
+        "heading": 82.33036041259766,
+        "pitch": -21.053571701049805,
+        "zoom": 2,
+        "canvas_x": 440,
+        "canvas_y": 207,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 2,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30293273925781,
+          47.65800857543945
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30293273925781,
+          47.65800857543945
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699963,
+        "label_type": "NoCurbRamp",
+        "neighborhood": "University District",
+        "severity": 3,
+        "is_temporary": false,
+        "label_id": 6238,
+        "gsv_panorama_id": "HYM7i8tmgg1o1quC0iOccQ",
+        "heading": 266.7946472167969,
+        "pitch": -12.303571701049805,
+        "zoom": 2,
+        "canvas_x": 285,
+        "canvas_y": 209,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 3,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30270385742188,
+          47.65797805786133
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30270385742188,
+          47.65797805786133
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698218,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 2,
+        "is_temporary": false,
+        "label_id": 6239,
+        "gsv_panorama_id": "HYM7i8tmgg1o1quC0iOccQ",
+        "heading": 149.74107360839844,
+        "pitch": -22.125,
+        "zoom": 2,
+        "canvas_x": 296,
+        "canvas_y": 191,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 2,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31208038330078,
+          47.65970993041992
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31207275390625,
+          47.65970993041992
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698332,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 1,
+        "is_temporary": false,
+        "label_id": 82256,
+        "gsv_panorama_id": "ik7SakBwPCxOsv0A9CQIoQ",
+        "heading": 237.65402221679688,
+        "pitch": -10.229910850524902,
+        "zoom": 3,
+        "canvas_x": 435,
+        "canvas_y": 250,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 1,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3121337890625,
+          47.659732818603516
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31212615966797,
+          47.659732818603516
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698330,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 1,
+        "is_temporary": false,
+        "label_id": 82257,
+        "gsv_panorama_id": "ik7SakBwPCxOsv0A9CQIoQ",
+        "heading": 250.82589721679688,
+        "pitch": -10.323660850524902,
+        "zoom": 3,
+        "canvas_x": 497,
+        "canvas_y": 191,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 1,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31214904785156,
+          47.65987014770508
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3121337890625,
+          47.65987777709961
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698328,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 2,
+        "is_temporary": false,
+        "label_id": 82258,
+        "gsv_panorama_id": "ik7SakBwPCxOsv0A9CQIoQ",
+        "heading": 305.8571472167969,
+        "pitch": -7.042410850524902,
+        "zoom": 3,
+        "canvas_x": 407,
+        "canvas_y": 211,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 2,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3125991821289,
+          47.65324783325195
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3126220703125,
+          47.65325164794922
+        ]
+      },
+      "properties": {
+        "attribute_id": 21697832,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 2,
+        "is_temporary": false,
+        "label_id": 12570,
+        "gsv_panorama_id": "_bomJyJWhTVreAcKV90BxQ",
+        "heading": 328.6852722167969,
+        "pitch": -5.796875,
+        "zoom": 3,
+        "canvas_x": 500,
+        "canvas_y": 251,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 2,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31241607666016,
+          47.652801513671875
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31240844726562,
+          47.652801513671875
+        ]
+      },
+      "properties": {
+        "attribute_id": 21697814,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 1,
+        "is_temporary": false,
+        "label_id": 12582,
+        "gsv_panorama_id": "_ip24ehYUP1ar-KLee5EDg",
+        "heading": 158.27232360839844,
+        "pitch": -5.964285850524902,
+        "zoom": 2,
+        "canvas_x": 388,
+        "canvas_y": 280,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 1,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30209350585938,
+          47.65565872192383
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30209350585938,
+          47.65565872192383
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699966,
+        "label_type": "NoCurbRamp",
+        "neighborhood": "University District",
+        "severity": 5,
+        "is_temporary": false,
+        "label_id": 72922,
+        "gsv_panorama_id": "TYQqMPUA8KIPLnIMUsVF7A",
+        "heading": 82.63169860839844,
+        "pitch": -33.875,
+        "zoom": 1,
+        "canvas_x": 170,
+        "canvas_y": 237,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 5,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30211639404297,
+          47.65556716918945
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30211639404297,
+          47.65556716918945
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699968,
+        "label_type": "NoCurbRamp",
+        "neighborhood": "University District",
+        "severity": 5,
+        "is_temporary": false,
+        "label_id": 72923,
+        "gsv_panorama_id": "w1NByRWCcFw25eLn91oQqQ",
+        "heading": 162.13169860839844,
+        "pitch": -26.9375,
+        "zoom": 1,
+        "canvas_x": 385,
+        "canvas_y": 177,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 5,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3119125366211,
+          47.65676498413086
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3119125366211,
+          47.65676498413086
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698380,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 1,
+        "is_temporary": false,
+        "label_id": 74589,
+        "gsv_panorama_id": "um101hC_ob0V6KxKVSwH4w",
+        "heading": 130.8794708251953,
+        "pitch": -10.089285850524902,
+        "zoom": 2,
+        "canvas_x": 162,
+        "canvas_y": 197,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 1,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31224060058594,
+          47.656150817871094
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3122329711914,
+          47.65616226196289
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698143,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 1,
+        "is_temporary": false,
+        "label_id": 74616,
+        "gsv_panorama_id": "UxbJoKO3MInQfZ4M7685wQ",
+        "heading": 214.5,
+        "pitch": -30.875,
+        "zoom": 1,
+        "canvas_x": 242,
+        "canvas_y": 122,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 1,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31192779541016,
+          47.656951904296875
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31192779541016,
+          47.656951904296875
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698379,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 1,
+        "is_temporary": false,
+        "label_id": 74580,
+        "gsv_panorama_id": "S-RHQ6JZlNeE0qAX45CX2A",
+        "heading": 105.25446319580078,
+        "pitch": -13.482142448425293,
+        "zoom": 2,
+        "canvas_x": 200,
+        "canvas_y": 170,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 1,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31214904785156,
+          47.65987014770508
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3121566772461,
+          47.65986251831055
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698328,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 2,
+        "is_temporary": false,
+        "label_id": 74513,
+        "gsv_panorama_id": "G6y2UScZjlLaRPHScYGQPg",
+        "heading": 340.7008972167969,
+        "pitch": -20,
+        "zoom": 2,
+        "canvas_x": 308,
+        "canvas_y": 122,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 1,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31211853027344,
+          47.65987777709961
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31212615966797,
+          47.65990447998047
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698326,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 1,
+        "is_temporary": false,
+        "label_id": 74516,
+        "gsv_panorama_id": "G6y2UScZjlLaRPHScYGQPg",
+        "heading": 340.7008972167969,
+        "pitch": -20,
+        "zoom": 2,
+        "canvas_x": 485,
+        "canvas_y": 101,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 1,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31214904785156,
+          47.658382415771484
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31214904785156,
+          47.658382415771484
+        ]
+      },
+      "properties": {
+        "attribute_id": 21697946,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 1,
+        "is_temporary": false,
+        "label_id": 74537,
+        "gsv_panorama_id": "0T3mGhBpV9lvIIVaP4zTSQ",
+        "heading": 275.96875,
+        "pitch": -35,
+        "zoom": 2,
+        "canvas_x": 396,
+        "canvas_y": 300,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 1,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3006362915039,
+          47.660423278808594
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3006362915039,
+          47.660423278808594
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699327,
+        "label_type": "SurfaceProblem",
+        "neighborhood": "University District",
+        "severity": 3,
+        "is_temporary": false,
+        "label_id": 75808,
+        "gsv_panorama_id": "8RYPqPwNkTzRCwDMAvYEDA",
+        "heading": 145.3125,
+        "pitch": -18.625,
+        "zoom": 1,
+        "canvas_x": 369,
+        "canvas_y": 237,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 3,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30122375488281,
+          47.659515380859375
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30122375488281,
+          47.659515380859375
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699527,
+        "label_type": "Obstacle",
+        "neighborhood": "University District",
+        "severity": 3,
+        "is_temporary": false,
+        "label_id": 75820,
+        "gsv_panorama_id": "iiMBe1DdNTZvVqCNs-ssew",
+        "heading": 244.45535278320312,
+        "pitch": -15.125,
+        "zoom": 1,
+        "canvas_x": 481,
+        "canvas_y": 183,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 3,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30084991455078,
+          47.660072326660156
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30084991455078,
+          47.660072326660156
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698645,
+        "label_type": "NoSidewalk",
+        "neighborhood": "University District",
+        "severity": 4,
+        "is_temporary": false,
+        "label_id": 75827,
+        "gsv_panorama_id": "r1VeE64qMDbHXzzO2FhaNA",
+        "heading": 19.5,
+        "pitch": -23.854909896850586,
+        "zoom": 1,
+        "canvas_x": 429,
+        "canvas_y": 249,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 4,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.29846954345703,
+          47.66094207763672
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.29846954345703,
+          47.66093444824219
+        ]
+      },
+      "properties": {
+        "attribute_id": 21697765,
+        "label_type": "CurbRamp",
+        "neighborhood": "University District",
+        "severity": 1,
+        "is_temporary": false,
+        "label_id": 75963,
+        "gsv_panorama_id": "9eQDO1-jXNYohVynQr0MAg",
+        "heading": 157.02455139160156,
+        "pitch": -35,
+        "zoom": 1,
+        "canvas_x": 396,
+        "canvas_y": 363,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 1,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30087280273438,
+          47.6599006652832
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30085754394531,
+          47.65991973876953
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698660,
+        "label_type": "NoSidewalk",
+        "neighborhood": "University District",
+        "severity": 4,
+        "is_temporary": false,
+        "label_id": 76033,
+        "gsv_panorama_id": "oCH4qmW-Mzm9zKqwweFIcA",
+        "heading": 3.75,
+        "pitch": -28.25,
+        "zoom": 1,
+        "canvas_x": 527,
+        "canvas_y": 180,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 3,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30083465576172,
+          47.66017150878906
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30082702636719,
+          47.66016387939453
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698639,
+        "label_type": "NoSidewalk",
+        "neighborhood": "University District",
+        "severity": 4,
+        "is_temporary": false,
+        "label_id": 76040,
+        "gsv_panorama_id": "fzq32PR23btGqJEDI-FK-Q",
+        "heading": 19.5,
+        "pitch": -34.625,
+        "zoom": 1,
+        "canvas_x": 473,
+        "canvas_y": 163,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 3,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30083465576172,
+          47.66017150878906
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30083465576172,
+          47.66017150878906
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698639,
+        "label_type": "NoSidewalk",
+        "neighborhood": "University District",
+        "severity": 4,
+        "is_temporary": false,
+        "label_id": 75828,
+        "gsv_panorama_id": "fzq32PR23btGqJEDI-FK-Q",
+        "heading": 19.5,
+        "pitch": -23.854909896850586,
+        "zoom": 1,
+        "canvas_x": 416,
+        "canvas_y": 213,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": 4,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30480194091797,
+          47.650794982910156
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30480194091797,
+          47.650794982910156
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699307,
+        "label_type": "Occlusion",
+        "neighborhood": "University District",
+        "severity": null,
+        "is_temporary": false,
+        "label_id": 31304,
+        "gsv_panorama_id": "XGqfw7yhpPEVtO7G7MrLsg",
+        "heading": 234.375,
+        "pitch": -26.5625,
+        "zoom": 1,
+        "canvas_x": 60,
+        "canvas_y": 158,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": null,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31246185302734,
+          47.66117858886719
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31246185302734,
+          47.66117858886719
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699309,
+        "label_type": "Occlusion",
+        "neighborhood": "University District",
+        "severity": null,
+        "is_temporary": false,
+        "label_id": 71839,
+        "gsv_panorama_id": "sSXs2OsEfUANYlk1bJaLNA",
+        "heading": 207.375,
+        "pitch": -13.6875,
+        "zoom": 1,
+        "canvas_x": 296,
+        "canvas_y": 203,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": null,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30583953857422,
+          47.649505615234375
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30583953857422,
+          47.649505615234375
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699660,
+        "label_type": "Obstacle",
+        "neighborhood": "University District",
+        "severity": null,
+        "is_temporary": false,
+        "label_id": 1479,
+        "gsv_panorama_id": "8RbidYHjw3swzqxFGZV3nA",
+        "heading": 173.0625,
+        "pitch": -10.875,
+        "zoom": 1,
+        "canvas_x": 394,
+        "canvas_y": 261,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": null,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3055648803711,
+          47.650569915771484
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3055648803711,
+          47.650569915771484
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699321,
+        "label_type": "Occlusion",
+        "neighborhood": "University District",
+        "severity": null,
+        "is_temporary": false,
+        "label_id": 31306,
+        "gsv_panorama_id": "0XV1zguEmh5DwHwqc08i9g",
+        "heading": 211.125,
+        "pitch": -20.375,
+        "zoom": 1,
+        "canvas_x": 199,
+        "canvas_y": 192,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": null,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30235290527344,
+          47.65874099731445
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30235290527344,
+          47.65874099731445
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699378,
+        "label_type": "SurfaceProblem",
+        "neighborhood": "University District",
+        "severity": null,
+        "is_temporary": false,
+        "label_id": 4957,
+        "gsv_panorama_id": "yssKuCKMKn92VW02bOhH3w",
+        "heading": 80.1875,
+        "pitch": -25.8125,
+        "zoom": 1,
+        "canvas_x": 319,
+        "canvas_y": 181,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": null,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30574035644531,
+          47.650569915771484
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30574035644531,
+          47.650569915771484
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699311,
+        "label_type": "Occlusion",
+        "neighborhood": "University District",
+        "severity": null,
+        "is_temporary": false,
+        "label_id": 31307,
+        "gsv_panorama_id": "YEXbVHpSv5GCkW1sjuKN4w",
+        "heading": 211.125,
+        "pitch": -20.375,
+        "zoom": 1,
+        "canvas_x": 369,
+        "canvas_y": 166,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": null,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30596923828125,
+          47.650508880615234
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30596923828125,
+          47.650508880615234
+        ]
+      },
+      "properties": {
+        "attribute_id": 21699318,
+        "label_type": "Occlusion",
+        "neighborhood": "University District",
+        "severity": null,
+        "is_temporary": false,
+        "label_id": 31308,
+        "gsv_panorama_id": "n6a6WuV0d9s51Hz4xI00-g",
+        "heading": 211.125,
+        "pitch": -20.375,
+        "zoom": 1,
+        "canvas_x": 445,
+        "canvas_y": 155,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": null,
+        "label_is_temporary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30268859863281,
+          47.65849304199219
+        ]
+      },
+      "label_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.30268859863281,
+          47.65849304199219
+        ]
+      },
+      "properties": {
+        "attribute_id": 21698661,
+        "label_type": "NoSidewalk",
+        "neighborhood": "University District",
+        "severity": null,
+        "is_temporary": false,
+        "label_id": 4959,
+        "gsv_panorama_id": "tXk9G5ZQUI63e74jw8OmEg",
+        "heading": 214.25,
+        "pitch": -5.8125,
+        "zoom": 1,
+        "canvas_x": 386,
+        "canvas_y": 274,
+        "canvas_width": 720,
+        "canvas_height": 480,
+        "label_severity": null,
+        "label_is_temporary": false
+      }
+    }
+  ]
+}

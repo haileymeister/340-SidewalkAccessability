@@ -1,0 +1,316 @@
+
+* {
+    box-sizing: border-box;
+}
+
+/*              NavBar Styling          */
+.skip-link {
+    position: absolute;
+    left: -1000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding-right: 1em;
+}
+.skip-link:focus{
+    position: static;
+    overflow: visible;
+}
+
+nav {
+    background-color: #93c6d6;
+}
+
+.nav-title {
+    color: black;
+    font-size: 2em;
+}
+
+
+.hamburger, .hamburger:focus, .hamburger:active, nav a {
+    color: black;
+}
+
+.link:active, .link:visited, .link:focus{
+    font-weight: bold;
+    color: black;
+}
+
+main {
+    position: relative;
+}
+
+/*              Body Styling            */
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+}
+
+.colored-header {
+    margin-top: 0;
+    background-color: #93c6d6;
+    padding-top: .2em;
+    padding-bottom: .2em;
+}
+
+.top-header {
+   text-align: center;
+   
+}
+
+
+h2, h3{
+    padding: .5rem 0em;
+}
+
+p {
+    padding-top: 1rem;
+}
+
+img.header-image{
+    height: 200px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-duration: 3s;
+    animation-name: fadein;
+}
+
+@keyframes fadein {
+    from {
+    opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*  Image Citation from Upsplash */
+.cite {
+    background-color:black;
+    opacity: .7;
+    color:white;
+    text-decoration:none;
+    padding:3px 4px;
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif;
+    font-size:10px;
+    font-weight:bold;
+    line-height:1;
+    display:inline-block;
+    border-radius:3px;
+}
+
+
+.image-span {
+    display:inline-block;
+    padding:2px 2px;
+}
+
+/*              Map Styling             */
+
+.map-background {
+    background-color: #C3E3EE;
+}
+
+.flex-map {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+    justify-content: center;
+}
+
+.flex-map-item {
+    flex: 1 50%;
+    padding: 1em;
+    border-radius: 10px;
+    min-height: 500px;
+}
+
+/*              Card View               */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards p {
+  padding: .5rem 1rem;
+}
+
+.card {
+  background-color: white;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  /* width: 400px; */
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23) 
+}
+
+/*              Form Styling            */
+.form-header {
+    font-size: 1.25em;
+}
+
+.text-input {
+    padding: .25em 1em;
+    margin: 1em 0;
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+.text-input:focus {
+    border: 3px solid #3F8095;
+    outline: #3F8095;
+    border-radius: 4px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.flex-item {
+    flex: 1 0 50%;
+    display: block;
+}
+
+.form-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.inline {
+    display: inline-block;
+    padding-right: 1em;
+}
+
+.flex-image {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    padding-left: 2rem;
+}
+
+div.image-box {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.image-hide {
+    display: none;
+}
+
+.img-cite {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    margin: auto;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: #93c6d6;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-button:disabled {
+    background-color: #3F8095;
+}
+
+/*              Footer Styling          */
+.footer {
+    position: absolute bottom;
+    left: 0;
+    bottom: 0;
+    margin-top: 1em;
+    padding: 15px;
+    width: 100%;
+    background-color: #93c6d6;
+}
+
+.foot-link, .foot-link:active {
+    color: black;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    flex-direction: row;
+}
+
+/*          About.html specific styling    */
+
+.headshot {
+    width: 200px;
+}
+
+.flex-align {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*                 @media                */
+
+@media (max-width: 375px) {
+    .top-header, h1, h2, h3{
+        font-size: 1.7em;
+    }
+
+    body {
+        font-size: .8rem;
+    }
+}
+
+@media (min-width: 768px) {
+    div.image-hide {
+        display: block;
+    }
+
+    .headshot {
+        margin-right: 50px;
+    }
+
+    .flex-map, .flex-container{
+        flex-direction: row;
+    }
+
+    .flex-align {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    }
+
+    img.header-image {
+        height: auto;
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 960px){
+    body {
+        font-size: 1.25em;
+    }
+
+    
+    .card {
+        margin-left: 2rem;
+    }
+
+    .cite {
+    padding:4px 6px;
+    font-size:12px;
+    line-height:1.2;
+    }
+
+}
