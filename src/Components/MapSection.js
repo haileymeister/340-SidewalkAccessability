@@ -24,7 +24,6 @@ export class MapSection extends Component{
         .then( (data) => {
           data.features.forEach(function(point){
 
-            //Change back to type to solve replace problem and split string
             let type = point.properties.label_type;
             let problem = type.replace(/([^A-Z])([A-Z])/g, "$1 $2").trim();
             //console.log(problem)
@@ -34,7 +33,7 @@ export class MapSection extends Component{
             }
 
             let locationData = { 
-              coordinates: point.geometry.coordinates,
+              coordinates: '[' + point.geometry.coordinates[1] + ', ' + point.geometry.coordinates[0] + ']',
               neighborhood: point.properties.neighborhood,
               problem: problem,
               severity: severity,
@@ -44,16 +43,17 @@ export class MapSection extends Component{
             //console.log(allData)
 
           });
-          console.log(allData)
+          //console.log(allData)
           this.setState({locations: allData});
-          console.log('state', this.state);
+          //console.log('state', this.state);
         })
           
     }
   
-  
 
   render(){
+      console.log(this.state)
+
     return(
       <div>
         <div className="container">

@@ -114,6 +114,11 @@ img.header-image{
     background-color: #C3E3EE;
 }
 
+.leaflet-container {
+  height: 555px;
+  width: auto;
+}
+
 .flex-map {
     display: flex;
     flex-direction: column;

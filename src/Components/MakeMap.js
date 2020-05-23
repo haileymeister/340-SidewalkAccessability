@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css';
 
 
 export class MakeMap extends Component {
@@ -15,20 +14,27 @@ export class MakeMap extends Component {
     }
   }
 
-  makeMarkers = () => {
-    this.props.locations.map( (location) => {
-      let point = location.coordinates;
-      return (
-        <Marker position={point} key={location.number}>
-          <Popup>
-            <span>Neighborhood: {location.neighborhood}</span>
-          </Popup>
-        </Marker>
-      )
-    })
+  makeMarkers = (locations) => {
+    // console.log('locations', locations)
+    if(locations.length > 0){
+      console.log('if entered')
+      console.log(locations)
+      locations.map( (point) => {
+        return(
+          <Marker key={point.number} position={point}>
+            <Popup>
+              <span>It worked!</span>
+            </Popup>
+          </Marker>
+        )
+      });
+    } else {
+      return;
+    }
   }
 
   render(){
+
     return(
       <div className="flex-map-item" id="mapid">
         <Map 
@@ -36,10 +42,10 @@ export class MakeMap extends Component {
           zoom={this.state.zoom}
         >
           <TileLayer
-            url='https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGFpbGV5bWVpc3RlciIsImEiOiJjazlyeHR1dHcwemZkM3RxeDZoNWlxcWs4In0.-eRubmoU8XEoaX2_ZjZQfQ'
-            attribution= 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
+            url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
           />
-          {this.makeMarkers()}
+          {this.makeMarkers(this.props.locations)}
         </Map>
       </div>
     )
