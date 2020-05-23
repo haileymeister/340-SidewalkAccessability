@@ -7,12 +7,12 @@ export class NavBar extends Component {
     render(){
 
         return (
-            <nav className="navbar navbar-expand-lg navbar-light">
+            <nav className="navbar navbar-expand-lg navbar-light" role="navigation">
                 <div>
                     <a href="#main-content" className="skip-link">Skip to main content</a>
                 </div>
                 <h1 className="navbar-brand nav-title top-header">
-                    <span className='pr-3'><FontAwesomeIcon icon={faAccessibleIcon} /></span>Access Seattle
+                    <span className='pr-3' aria-hidden='true'><FontAwesomeIcon icon={faAccessibleIcon} /></span>Access Seattle
                 </h1>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">   
                     <a href="#" className="hamburger"><i className="fa fa-bars" aria-label="menu"></i></a>
