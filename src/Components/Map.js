@@ -1,13 +1,87 @@
-import React, { Component } from 'react'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import React, {Component} from 'react';
 import {MakeCard} from './Cards';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 
+import 'whatwg-fetch';
+
+
+export class MapSection extends Component{
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      locations: []
+    }
+
+  }
+
+  componentDidMount(){ 
+    let allData = [];
+
+    fetch('data/access_attr_with_labels.json')
+      .then( (response) => {
+        return response.json();
+      })
+      .then( (data) => {
+        data.features.forEach(function(point){
+
+          let type = point.properties.label_type;
+          let problem = type.replace(/([^A-Z])([A-Z])/g, "$1 $2").trim();
+          let severity = point.properties.severity;
+          if (severity === null){
+              severity = 'not noted';
+          }
+
+          let locationData = { 
+            coordinates: [point.geometry.coordinates[1], point.geometry.coordinates[0]],
+            neighborhood: point.properties.neighborhood,
+            problem: problem,
+            severity: severity,
+            number: allData.length
+          }
+          allData.push(locationData);
+
+        });
+        this.setState({locations: allData});
+      })
+          
+    }
+
+  
+
+  render(){
+      //console.log(this.state)
+
+    return(
+      <section className="map-background">
+        <div className="colored-header">
+          <h2 className="container">View</h2>
+        </div>
+        <div className="container">
+          <h3>Map</h3>
+          <div className="flex-map map-background">
+            <div className="flex-map-item" id="mapid">
+              <MakeMap locations={this.state.locations}/>
+            </div>
+            <div className="flex-item">
+              <div className="cards">
+                <div className="card">
+                  {/* <MakeCard /> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+    )
+  }
+}
 
 export class MakeMap extends Component {
   constructor(props){
     super(props);
 
-    // Might not need to be state!!!
     this.state = {
       lat: 47.662,
       lng: -122.313,
@@ -16,7 +90,8 @@ export class MakeMap extends Component {
   }
 
   handleClick = () => {
-    return <MakeCard />
+    console.log('clicked')
+    //return <MakeCard />
   }
 
   makeMarkers = (locations) => {
@@ -27,9 +102,9 @@ export class MakeMap extends Component {
       //console.log(coord)
           return(
           <Marker key={point.number} position={coord} onCLick={this.handleClick}>
-              <Popup>
+              {/* <Popup>
                 <span>Make cards pop up!</span>
-              </Popup>
+              </Popup> */}
           </Marker>
           )
         });
@@ -77,8 +152,9 @@ export class SubmittedMarker extends Component {
         return response.json();
       })
       .then(function(data){
-        if (data.status != 'ZERO_RESULTS'){
+        if (data.status !== 'ZERO_RESULTS'){
           data.results.forEach(function(point){
+            //console.log()
             let lat = point.geometry.location.lat;
             let lng = point.geometry.location.lng;
             let coordinates = [lat, lng]; 

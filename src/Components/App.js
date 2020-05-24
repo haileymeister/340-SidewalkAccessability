@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {NavBar} from './NavBar';
-import {MapSection} from './MapSection';
+import {MapSection} from './Map';
 import {FormSection} from './Form';
 import {ImageCite} from './ImgCite';
 
