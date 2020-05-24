@@ -15,15 +15,15 @@ export class NavBar extends Component {
                     <span className='pr-3' aria-hidden='true'><FontAwesomeIcon icon={faAccessibleIcon} /></span>Access Seattle
                 </h1>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">   
-                    <a href="#" className="hamburger"><i className="fa fa-bars" aria-label="menu"></i></a>
+                    <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <a className="nav-link" href="#">Home</a>
+                            <button className="nav-link">Home</button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About</a>
+                            <button className="nav-link">About</button>
                         </li>
                     </ul>
                 </div>

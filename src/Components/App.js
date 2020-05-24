@@ -6,6 +6,19 @@ import {ImageCite} from './ImgCite';
 
 
 export class App extends Component {
+
+  componentDidMount() {
+    // https://github.com/PaulLeCam/react-leaflet/issues/453#issuecomment-541142178
+    // Fix for weird bug that happens when you import the CSS file directly into your JS
+    const L = require("leaflet");
+    delete L.Icon.Default.prototype._getIconUrl;
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+      iconUrl: require("leaflet/dist/images/marker-icon.png"),
+      shadowUrl: require("leaflet/dist/images/marker-shadow.png")
+    });
+  }
+
   render(){
       return (
           <div>
@@ -33,12 +46,7 @@ export class App extends Component {
                     </div>
                 </section>
 
-                <section className="map-background">
-                    <div className="colored-header">
-                      <h2 className="container">View</h2>
-                    </div>
-                    <MapSection />
-                </section>
+                <MapSection />
 
                 <section className="container">
                     <h2>Record Sidewalk Information</h2>

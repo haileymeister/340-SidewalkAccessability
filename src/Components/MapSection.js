@@ -26,51 +26,52 @@ export class MapSection extends Component{
 
             let type = point.properties.label_type;
             let problem = type.replace(/([^A-Z])([A-Z])/g, "$1 $2").trim();
-            //console.log(problem)
             let severity = point.properties.severity;
             if (severity === null){
                 severity = 'not noted';
             }
 
             let locationData = { 
-              coordinates: '[' + point.geometry.coordinates[1] + ', ' + point.geometry.coordinates[0] + ']',
+              coordinates: [point.geometry.coordinates[1], point.geometry.coordinates[0]],
               neighborhood: point.properties.neighborhood,
               problem: problem,
               severity: severity,
               number: allData.length
             }
             allData.push(locationData);
-            //console.log(allData)
 
           });
-          //console.log(allData)
           this.setState({locations: allData});
-          //console.log('state', this.state);
         })
           
     }
+
   
 
   render(){
       console.log(this.state)
 
     return(
-      <div>
+      <section className="map-background">
+        <div className="colored-header">
+          <h2 className="container">View</h2>
+        </div>
         <div className="container">
           <h3>Map</h3>
           <div className="flex-map map-background">
-            <MakeMap locations={this.state.locations}/>
+            <div className="flex-map-item" id="mapid">
+              <MakeMap locations={this.state.locations}/>
+            </div>
             <div className="flex-item">
               <div className="cards">
-                <div id="cardID">
-                  {/* Card added when marker clicked */}
+                <div className="card">
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        </section>
     )
   }
 }
-  
