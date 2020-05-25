@@ -71,13 +71,10 @@ export class MapData extends Component {
                 coordinates: coordinates,
                 address: point.formatted_address,
                 problem: problem,
-                //cardContent: content
               }
             
           });
-          //console.log(currentState)
           let newState = currentState.concat(newLocation);
-          //console.log('new', newState)
           console.log('beforenewadded')
           this.setState( {
             locations: newState,
@@ -92,22 +89,7 @@ export class MapData extends Component {
 
   };
 
-//not working right
-  addressError = () => {
-    
-    if (this.state.validAddress){ 
-      return (<p id="success" className="alert alert-success d-none">Thank You!</p>);
-    } else if (!this.state.validAddress){
-      //console.log('entered')
-      return (<p id="failed" className="alert alert-danger d-none">Address may not be valid. Try again.</p>)
-    } else {
-      return;
-    }
-  }
-
-//set state to true or false then call function to make card if state is false
   setCardState = (location) => {
-    //console.log(location)
     this.setState( {
       showCard: true,
       clickedLocationData: location
@@ -115,13 +97,10 @@ export class MapData extends Component {
   }
 
   mapClick = () => {
-    //console.log('click')
     this.setState( {showCard: false, clickedLocationData: ''} );
   }
 
   makeCard = () => {
-    //console.log('make', this.state.clickedLocationData)
-    //console.log(this.state)
     if(this.state.showCard){
       return <MakeCard locationData={this.state.clickedLocationData} />
     }
@@ -152,7 +131,7 @@ export class MapData extends Component {
 
         <div className="container">
           <h2>Record Sidewalk Information</h2>
-          <FormSection addMarker={this.getNewLocation} addressError={() => this.addressError(this.state.validAddress)}/>
+          <FormSection addMarker={this.getNewLocation} validAddress={this.state.validAddress}/>
         </div>
       </section>
     );

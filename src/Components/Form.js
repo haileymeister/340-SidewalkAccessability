@@ -13,56 +13,68 @@ export class FormSection extends Component {
       problem: '',
 
       errorMessage: '',
-
+      disabled: false,
+      sucess: false,
     };
   }
 
   handleChange = (event) => {
     let name = event.target.name;
-    let newValue = event.target.value;
+    let newValue = event.target.value ? true : false;
     console.log(newValue);
     //console.log(newValue)
     this.setState( {[name]: newValue} );
   };
 
   handleSubmit = (event) => {
-    //console.log(this.state);
     event.preventDefault();
-    let address =
-      this.state.street + " " + this.state.city + " " + this.state.state + " " + this.state.zipcode;
-
-    console.log(this.state);
+    console.log('clicked')
+    
     let error = '';
-    if (this.state.street === '' || this.state.city === '' || this.state.state === '' || this.state.zipcode === ''){
-      error = <p><strong>Please fill in missing values</strong></p>
-    } 
-    if (this.state.problem === ''){
-      error = <p><strong>Please select a problem</strong></p>
+    if ( this.state.street === '' || this.state.city === '' || this.state.state === '' || this.state.zipcode === '' || this.state.problem === ''){
+      error = <p><strong>Please fill in all feilds.</strong></p>
+      this.setState( {errorMessage: error, disabled: true} );
+
+    }  else {
+      let address = this.state.street + " " + this.state.city + " " + this.state.state + " " + this.state.zipcode;
+      console.log('entered')
+      this.props.addMarker(address, this.state.problem)
+      console.log('before set')
+      this.setState( {disabled: false, success: null} )
     }
 
-    this.setState( {errorMessage: error} );
-
-    //somehow pass form a prop with the submitted marker context in map
-    this.props.addMarker(address, this.state.problem)
-
-    this.setState({
-      street: '',
-      city: '',
-      state: '',
-      zipcode: '',
-      problem: '',
-    });
-
-    //console.log(address);
+    this.clearForm();
   };
+
+  clearForm = () => {
+    this.setState({
+        street: '',
+        city: '',
+        state: '',
+        zipcode: '',
+        problem: '',
+        disabled: false,
+        success: true
+      });
+  }
+
+  successMessage = () => {
+    console.log('success', this.props.validAddress)
+    if (this.props.validAddress && !this.state.disabled){
+      return (<p id="success" className="alert alert-success">Thank You!</p>)
+    } else if (!this.props.validAddress && this.props.validAddress != null) {
+      return (<p id="failed" className="alert alert-danger">Address may not be valid. Try again.</p>)
+    }
+  }
+
 
 
   render() {
     return (
       <div>
-       {this.props.addressError()}
         <div className="flex-container">
           <div className="flex-item">
+            {this.successMessage()}
             <form id="input-form">
               <div className="form-group">
                 <h3 className="form-header">Address</h3>
@@ -78,7 +90,6 @@ export class FormSection extends Component {
                   placeholder="Enter street address"
                   value={this.state.currentStreetValue}
                   onChange={this.handleChange}
-                  required
                 ></input>
                 <br></br>
                 <label htmlFor="city">City</label>{" "}
@@ -114,7 +125,7 @@ export class FormSection extends Component {
                   placeholder="Enter zipcode"
                   value={this.state.currentZipValue}
                   onChange={this.handleChange}
-                  required
+                  required={'required'}
                 ></input>
               </div>
               <div className="form-group">
@@ -175,6 +186,7 @@ export class FormSection extends Component {
                       className="submit-button"
                       aria-label="submit button"
                       onClick={this.handleSubmit}
+                      disabled={this.state.disabled}
                     ></input>
                   </li>
                 </ul>

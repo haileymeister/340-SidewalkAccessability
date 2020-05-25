@@ -14,21 +14,17 @@ export class MakeMap extends Component {
   }
 
   handleClick = (location) => {
-    //console.log("clicked");
     this.props.setCardState(location);
   };
 
   handleMapClick = () => {
-    //console.log('mapclick')
     this.props.mapClick();
   }
 
   makeMarkers = (locations) => {
-    // console.log('locations', locations)
     if (locations.length > 0) {
       let renderedLocations = locations.map((point) => {
         let coord = point.coordinates;
-        //console.log(coord)
         return (
           <Marker key={point.number} position={coord} onCLick={() => this.handleClick(point)}></Marker>
         );
