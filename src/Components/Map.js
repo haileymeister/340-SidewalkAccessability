@@ -50,7 +50,7 @@ export class MapData extends Component {
     let url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=AIzaSyB4rr7XG9Pd1n0LYtuAUsEomezPNaubrDA';
 
     let currentState = this.state.locations;
-    console.log('current', currentState)
+    //console.log('current', currentState)
 
     fetch(url)
       .then( (response) => {

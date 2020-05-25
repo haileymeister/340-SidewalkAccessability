@@ -7,7 +7,9 @@ export class FormSection extends Component {
 
     this.state = {
       street: '',
+      streetValid: '',
       city: '',
+      cityValid: '',
       state: '',
       zipcode: '',
       problem: '',
@@ -20,9 +22,8 @@ export class FormSection extends Component {
 
   handleChange = (event) => {
     let name = event.target.name;
-    let newValue = event.target.value ? true : false;
-    console.log(newValue);
-    //console.log(newValue)
+    let newValue = event.target.value;
+    
     this.setState( {[name]: newValue} );
   };
 
@@ -40,10 +41,9 @@ export class FormSection extends Component {
       console.log('entered')
       this.props.addMarker(address, this.state.problem)
       console.log('before set')
-      this.setState( {disabled: false, success: null} )
+      this.setState( {disabled: false, success: true, errorMessage: ''} );
+      this.clearForm();
     }
-
-    this.clearForm();
   };
 
   clearForm = () => {
@@ -54,7 +54,8 @@ export class FormSection extends Component {
         zipcode: '',
         problem: '',
         disabled: false,
-        success: true
+        success: null,
+        checked: false
       });
   }
 
@@ -62,7 +63,7 @@ export class FormSection extends Component {
     console.log('success', this.props.validAddress)
     if (this.props.validAddress && !this.state.disabled){
       return (<p id="success" className="alert alert-success">Thank You!</p>)
-    } else if (!this.props.validAddress && this.props.validAddress != null) {
+    } else if (!this.props.validAddress && this.props.validAddress !== null) {
       return (<p id="failed" className="alert alert-danger">Address may not be valid. Try again.</p>)
     }
   }
@@ -88,7 +89,7 @@ export class FormSection extends Component {
                   name="street"
                   className="text-input"
                   placeholder="Enter street address"
-                  value={this.state.currentStreetValue}
+                  value={this.state.street}
                   onChange={this.handleChange}
                 ></input>
                 <br></br>
@@ -99,9 +100,8 @@ export class FormSection extends Component {
                   name="city"
                   className="text-input"
                   placeholder="Enter city"
-                  value={this.state.currentCityValue}
+                  value={this.state.city}
                   onChange={this.handleChange}
-                  required
                 ></input>
                 <br></br>
                 <label htmlFor="state">State</label>{" "}
@@ -111,9 +111,8 @@ export class FormSection extends Component {
                   name="state"
                   className="text-input"
                   placeholder="Enter state"
-                  value={this.state.currentStateValue}
+                  value={this.state.state}
                   onChange={this.handleChange}
-                  required
                 ></input>
                 <br></br>
                 <label htmlFor="zip">Zipcode</label>{" "}
@@ -123,9 +122,8 @@ export class FormSection extends Component {
                   name="zipcode"
                   className="text-input"
                   placeholder="Enter zipcode"
-                  value={this.state.currentZipValue}
+                  value={this.state.zipcode}
                   onChange={this.handleChange}
-                  required={'required'}
                 ></input>
               </div>
               <div className="form-group">
@@ -138,7 +136,7 @@ export class FormSection extends Component {
                       name="problem"
                       value="Obstruction"
                       onClick={this.handleChange}
-                      required
+                      // checked={this.state.checked}
                     ></input>{" "}
                     <label htmlFor="obstruction">Obstruction</label>
                   </li>
