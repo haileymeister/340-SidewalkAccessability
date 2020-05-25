@@ -6,75 +6,67 @@ export class FormSection extends Component {
     super(props);
 
     this.state = {
-      currentStreetValue: "",
-      currentCityValue: "",
-      currentStateValue: "",
-      currentZipValue: "",
-      streetProblem: "",
+      street: '',
+      city: '',
+      state: '',
+      zipcode: '',
+      problem: '',
+
+      errorMessage: '',
+
     };
   }
 
-  handleState = (event) => {
+  handleChange = (event) => {
+    let name = event.target.name;
     let newValue = event.target.value;
+    console.log(newValue);
     //console.log(newValue)
-    this.setState({ currentStateValue: newValue });
-  };
-
-  handleCity = (event) => {
-    //console.log(event);
-    let newValue = event.target.value;
-    this.setState({ currentCityValue: newValue });
-  };
-
-  handleStreet = (event) => {
-    //console.log(event);
-    let newValue = event.target.value;
-    this.setState({ currentStreetValue: newValue });
-  };
-
-  handleZip = (event) => {
-    //console.log(event);
-    let newValue = event.target.value;
-    this.setState({ currentZipValue: newValue });
-  };
-
-  handleRadio = (event) => {
-    let newValue = event.target.value;
-    this.setState({ streetProblem: newValue });
+    this.setState( {[name]: newValue} );
   };
 
   handleSubmit = (event) => {
+    //console.log(this.state);
     event.preventDefault();
     let address =
-      this.state.currentStreetValue + " " + this.state.currentCityValue + " " + this.state.currentStateValue + " " + this.state.currentZipValue;
+      this.state.street + " " + this.state.city + " " + this.state.state + " " + this.state.zipcode;
 
-    //console.log(this.state.streetProblem);
+    console.log(this.state);
+    let error = '';
+    if (this.state.street === '' || this.state.city === '' || this.state.state === '' || this.state.zipcode === ''){
+      error = <p><strong>Please fill in missing values</strong></p>
+    } 
+    if (this.state.problem === ''){
+      error = <p><strong>Please select a problem</strong></p>
+    }
+
+    this.setState( {errorMessage: error} );
 
     //somehow pass form a prop with the submitted marker context in map
-    this.props.addMarker(address, this.state.streetProblem)
+    this.props.addMarker(address, this.state.problem)
 
     this.setState({
-      currentStreetValue: "",
-      currentCityValue: "",
-      currentStateValue: "",
-      currentZipValue: "",
-      streetProblem: "",
+      street: '',
+      city: '',
+      state: '',
+      zipcode: '',
+      problem: '',
     });
 
     //console.log(address);
   };
 
+
   render() {
     return (
       <div>
-        {/* <p id="success" className="alert alert-success d-none">Thank You!</p>
-        <p id="failed" className="alert alert-danger d-none">Address may not be valid. Try again.</p> */}
-
+       {this.props.addressError()}
         <div className="flex-container">
           <div className="flex-item">
             <form id="input-form">
               <div className="form-group">
                 <h3 className="form-header">Address</h3>
+                {this.state.errorMessage}
                 <label htmlFor="street" id="street-lab">
                   Street
                 </label>{" "}
@@ -85,7 +77,7 @@ export class FormSection extends Component {
                   className="text-input"
                   placeholder="Enter street address"
                   value={this.state.currentStreetValue}
-                  onChange={this.handleStreet}
+                  onChange={this.handleChange}
                   required
                 ></input>
                 <br></br>
@@ -97,7 +89,7 @@ export class FormSection extends Component {
                   className="text-input"
                   placeholder="Enter city"
                   value={this.state.currentCityValue}
-                  onChange={this.handleCity}
+                  onChange={this.handleChange}
                   required
                 ></input>
                 <br></br>
@@ -109,7 +101,7 @@ export class FormSection extends Component {
                   className="text-input"
                   placeholder="Enter state"
                   value={this.state.currentStateValue}
-                  onChange={this.handleState}
+                  onChange={this.handleChange}
                   required
                 ></input>
                 <br></br>
@@ -121,7 +113,7 @@ export class FormSection extends Component {
                   className="text-input"
                   placeholder="Enter zipcode"
                   value={this.state.currentZipValue}
-                  onChange={this.handleZip}
+                  onChange={this.handleChange}
                   required
                 ></input>
               </div>
@@ -134,7 +126,7 @@ export class FormSection extends Component {
                       id="obstruction"
                       name="problem"
                       value="Obstruction"
-                      onClick={this.handleRadio}
+                      onClick={this.handleChange}
                       required
                     ></input>{" "}
                     <label htmlFor="obstruction">Obstruction</label>
@@ -145,7 +137,7 @@ export class FormSection extends Component {
                       id="pothole"
                       name="problem"
                       value="Pothole"
-                      onClick={this.handleRadio}
+                      onClick={this.handleChange}
                     ></input>{" "}
                     <label htmlFor="pothole">Pothole</label>
                   </li>
@@ -154,8 +146,8 @@ export class FormSection extends Component {
                       type="radio"
                       id="bump"
                       name="problem"
-                      value="Bump"
-                      onClick={this.handleRadio}
+                      value="Large Bump"
+                      onClick={this.handleChange}
                     ></input>{" "}
                     <label htmlFor="bump">Large Bump</label>
                   </li>
@@ -164,17 +156,16 @@ export class FormSection extends Component {
                       type="radio"
                       id="other"
                       name="problem"
-                      value="other"
-                      onClick={this.handleRadio}
+                      value="other" 
                     ></input>{" "}
                     <label htmlFor="other">Other</label>{" "}
                     <input
                       type="text"
                       id="otherText"
-                      name="other"
+                      name="problem"
                       className="text-input"
                       placeholder="Please specify..."
-                      onClick={this.handleRadio}
+                      onChange={this.handleChange}
                     ></input>
                   </li>
                   <li>

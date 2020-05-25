@@ -34,7 +34,7 @@ export class MakeMap extends Component {
         );
       });
       return renderedLocations;
-    } //else some sort of alert?? 
+    } 
   };
 
   render() {

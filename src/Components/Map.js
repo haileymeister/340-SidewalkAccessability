@@ -12,7 +12,8 @@ export class MapData extends Component {
     this.state = {
       locations: [],
       showCard: false, 
-      clickedLocationData: []
+      clickedLocationData: [],
+      validAddress: null
     };
   }
 
@@ -58,6 +59,7 @@ export class MapData extends Component {
       .then( (data) => {
         //console.log(this)
         if (data.status !== 'ZERO_RESULTS'){
+          console.log(data)
           let newLocation = {};
           data.results.forEach( (point) => {
             let lat = point.geometry.location.lat;
@@ -67,7 +69,7 @@ export class MapData extends Component {
             newLocation = {
                 number: this.state.locations.length + 1,
                 coordinates: coordinates,
-                address: address,
+                address: point.formatted_address,
                 problem: problem,
                 //cardContent: content
               }
@@ -76,13 +78,32 @@ export class MapData extends Component {
           //console.log(currentState)
           let newState = currentState.concat(newLocation);
           //console.log('new', newState)
-          this.setState( {locations: newState} )
+          console.log('beforenewadded')
+          this.setState( {
+            locations: newState,
+            validAddress: true
+          } );
+
         } else {
-          console.log('Invalid Address!')
+          console.log('entered')
+          this.setState( {validAddress: false} );
         }
       })
 
   };
+
+//not working right
+  addressError = () => {
+    
+    if (this.state.validAddress){ 
+      return (<p id="success" className="alert alert-success d-none">Thank You!</p>);
+    } else if (!this.state.validAddress){
+      //console.log('entered')
+      return (<p id="failed" className="alert alert-danger d-none">Address may not be valid. Try again.</p>)
+    } else {
+      return;
+    }
+  }
 
 //set state to true or false then call function to make card if state is false
   setCardState = (location) => {
@@ -131,7 +152,7 @@ export class MapData extends Component {
 
         <div className="container">
           <h2>Record Sidewalk Information</h2>
-          <FormSection addMarker={this.getNewLocation}/>
+          <FormSection addMarker={this.getNewLocation} addressError={() => this.addressError(this.state.validAddress)}/>
         </div>
       </section>
     );
