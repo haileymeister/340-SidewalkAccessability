@@ -7,44 +7,53 @@ export class FormSection extends Component {
 
     this.state = {
       street: '',
-      streetValid: '',
       city: '',
-      cityValid: '',
       state: '',
       zipcode: '',
       problem: '',
+      otherText: '',
 
       errorMessage: '',
       disabled: false,
-      sucess: false,
+      success: null,
     };
   }
 
   handleChange = (event) => {
     let name = event.target.name;
     let newValue = event.target.value;
-    
-    this.setState( {[name]: newValue} );
+    console.log('problem', this.state.problem)
+    console.log(name, newValue)
+    //not logging the problem right in the card 
+
+    this.setState( {[name]: newValue, disabled: false, success: null} );
   };
+
+  handleOther = (event) => {
+    this.setState( {otherText: event.target.value, problem: event.target.value, disabled: false} );
+  }
+
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('clicked')
     
     let error = '';
-    if ( this.state.street === '' || this.state.city === '' || this.state.state === '' || this.state.zipcode === '' || this.state.problem === ''){
-      error = <p><strong>Please fill in all feilds.</strong></p>
-      this.setState( {errorMessage: error, disabled: true} );
 
-    }  else {
+    if ( this.state.street === '' || this.state.city === '' || this.state.state === '' || this.state.zipcode === '' || this.state.problem === ''){
+      error = <p><strong>Please fill in all feilds.</strong></p>;
+      this.setState( {errorMessage: error, disabled: true} );
+    } else if (this.state.problem === this.state.otherText && this.state.otherText === ''){
+      error = <p><strong>Please fill in the other feild.</strong></p>;
+      this.setState({disabled: false, errorMessage: error});
+
+    } else {
       let address = this.state.street + " " + this.state.city + " " + this.state.state + " " + this.state.zipcode;
-      console.log('entered')
-      this.props.addMarker(address, this.state.problem)
-      console.log('before set')
+      this.props.addMarker(address, this.state.otherText)
       this.setState( {disabled: false, success: true, errorMessage: ''} );
       this.clearForm();
     }
   };
+
 
   clearForm = () => {
     this.setState({
@@ -53,15 +62,13 @@ export class FormSection extends Component {
         state: '',
         zipcode: '',
         problem: '',
+        otherText: '',
         disabled: false,
-        success: null,
-        checked: false
       });
   }
 
   successMessage = () => {
-    console.log('success', this.props.validAddress)
-    if (this.props.validAddress && !this.state.disabled){
+    if (this.props.validAddress && this.state.success){
       return (<p id="success" className="alert alert-success">Thank You!</p>)
     } else if (!this.props.validAddress && this.props.validAddress !== null) {
       return (<p id="failed" className="alert alert-danger">Address may not be valid. Try again.</p>)
@@ -126,6 +133,8 @@ export class FormSection extends Component {
                   onChange={this.handleChange}
                 ></input>
               </div>
+
+
               <div className="form-group">
                 <h3 className="form-header">Accessibility Problem</h3>
                 <ul className="form-list">
@@ -135,8 +144,8 @@ export class FormSection extends Component {
                       id="obstruction"
                       name="problem"
                       value="Obstruction"
-                      onClick={this.handleChange}
-                      // checked={this.state.checked}
+                      onChange={this.handleChange}
+                      checked={this.state.problem === 'Obstruction'}
                     ></input>{" "}
                     <label htmlFor="obstruction">Obstruction</label>
                   </li>
@@ -146,7 +155,8 @@ export class FormSection extends Component {
                       id="pothole"
                       name="problem"
                       value="Pothole"
-                      onClick={this.handleChange}
+                      onChange={this.handleChange}
+                      checked={this.state.problem === 'Pothole'}
                     ></input>{" "}
                     <label htmlFor="pothole">Pothole</label>
                   </li>
@@ -156,7 +166,8 @@ export class FormSection extends Component {
                       id="bump"
                       name="problem"
                       value="Large Bump"
-                      onClick={this.handleChange}
+                      onChange={this.handleChange}
+                      checked={this.state.problem === 'Large Bump'}
                     ></input>{" "}
                     <label htmlFor="bump">Large Bump</label>
                   </li>
@@ -165,7 +176,9 @@ export class FormSection extends Component {
                       type="radio"
                       id="other"
                       name="problem"
-                      value="other" 
+                      value="Other"
+                      onChange={this.handleChange}
+                      checked={this.state.problem === 'Other' || this.state.otherText.length > 0}
                     ></input>{" "}
                     <label htmlFor="other">Other</label>{" "}
                     <input
@@ -174,7 +187,9 @@ export class FormSection extends Component {
                       name="problem"
                       className="text-input"
                       placeholder="Please specify..."
-                      onChange={this.handleChange}
+                      value={this.state.otherText}
+                      onChange={this.handleOther}
+                      
                     ></input>
                   </li>
                   <li>

@@ -50,16 +50,13 @@ export class MapData extends Component {
     let url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=AIzaSyB4rr7XG9Pd1n0LYtuAUsEomezPNaubrDA';
 
     let currentState = this.state.locations;
-    //console.log('current', currentState)
 
     fetch(url)
       .then( (response) => {
         return response.json();
       })
       .then( (data) => {
-        //console.log(this)
         if (data.status !== 'ZERO_RESULTS'){
-          console.log(data)
           let newLocation = {};
           data.results.forEach( (point) => {
             let lat = point.geometry.location.lat;
@@ -75,14 +72,12 @@ export class MapData extends Component {
             
           });
           let newState = currentState.concat(newLocation);
-          console.log('beforenewadded')
           this.setState( {
             locations: newState,
             validAddress: true
           } );
 
         } else {
-          console.log('entered')
           this.setState( {validAddress: false} );
         }
       })

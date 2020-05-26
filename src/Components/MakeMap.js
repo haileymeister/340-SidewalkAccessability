@@ -22,6 +22,7 @@ export class MakeMap extends Component {
   }
 
   makeMarkers = (locations) => {
+    //console.log("Make marker")
     if (locations.length > 0) {
       let renderedLocations = locations.map((point) => {
         let coord = point.coordinates;

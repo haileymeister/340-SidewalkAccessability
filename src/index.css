@@ -285,18 +285,14 @@ div.image-box {
 }
 
 @media (min-width: 768px) {
-    div.image-hide {
-        display: block;
-    }
-
     .headshot {
         margin-right: 50px;
     }
 
     .flex-align {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
     }
 
     img.header-image {
@@ -309,6 +305,10 @@ div.image-box {
 @media (min-width: 960px){
     body {
         font-size: 1.25em;
+    }
+
+    div.image-hide {
+        display: block;
     }
 
      .flex-map, .flex-container{
