@@ -22,14 +22,13 @@ export class FormSection extends Component {
   handleChange = (event) => {
     let name = event.target.name;
     let newValue = event.target.value;
-    console.log('problem', this.state.problem)
-    console.log(name, newValue)
-    //not logging the problem right in the card 
+    //console.log(name, newValue)
 
     this.setState( {[name]: newValue, disabled: false, success: null} );
   };
 
   handleOther = (event) => {
+    //console.log('other', event.target.value)
     this.setState( {otherText: event.target.value, problem: event.target.value, disabled: false} );
   }
 
@@ -42,13 +41,13 @@ export class FormSection extends Component {
     if ( this.state.street === '' || this.state.city === '' || this.state.state === '' || this.state.zipcode === '' || this.state.problem === ''){
       error = <p><strong>Please fill in all feilds.</strong></p>;
       this.setState( {errorMessage: error, disabled: true} );
-    } else if (this.state.problem === this.state.otherText && this.state.otherText === ''){
+    } else if (this.state.problem === 'Other' && this.state.otherText === ''){
       error = <p><strong>Please fill in the other feild.</strong></p>;
       this.setState({disabled: false, errorMessage: error});
 
     } else {
       let address = this.state.street + " " + this.state.city + " " + this.state.state + " " + this.state.zipcode;
-      this.props.addMarker(address, this.state.otherText)
+      this.props.addMarker(address, this.state.problem)
       this.setState( {disabled: false, success: true, errorMessage: ''} );
       this.clearForm();
     }

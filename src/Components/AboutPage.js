@@ -28,7 +28,7 @@ export class AboutPage extends Component {
         </section>
 
         <section className="container">
-            <div className="flex-container">
+            <div className="flex-container headshot-container">
                 <div className="flex-item flex-align">
                     <img src="img/hailey-headshot.jpeg" alt="headshot of a women wearing black standing in front of a window" className="headshot"></img>
                 </div>

@@ -21,11 +21,10 @@ export class NavBar extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/">Home</NavLink>
-                    {/* Not becoming un-active when about link is clicked */}
+                  <NavLink exact className="nav-link" activeClassName="active" to="/">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/about">About</NavLink>
+                  <NavLink className="nav-link" activeClassName="active" to="/about">About</NavLink>
                 </li>
               </ul>
             </div>

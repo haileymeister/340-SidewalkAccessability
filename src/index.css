@@ -18,17 +18,24 @@
     overflow: visible;
 }
 
-nav {
+.navbar {
     background-color: #93c6d6;
+    /* padding: 0; */
 }
+
 
 .nav-link {
   background: none;
   border: none;
-  padding: 0;
-  /* color: #069; */
+  padding-top: 1em;
+  padding-bottom: 1em;
   cursor: pointer;
 }
+
+/* nav ul {
+  background-color: #afdae9;
+} */
+
 
 .nav-title {
     color: black;
@@ -262,6 +269,10 @@ div.image-box {
     width: 200px;
 }
 
+.headshot-container {
+  display: flex;
+}
+
 .flex-align {
     display: flex;
     justify-content: center;
@@ -272,53 +283,57 @@ div.image-box {
 
 @media (max-width: 375px) {
     .top-header, h1, h2, h3{
-        font-size: 1.7em;
+      font-size: 1.7em;
     }
 
     body {
-        font-size: .8rem;
+      font-size: .8rem;
     }
 }
 
 @media (min-width: 768px) {
-    .headshot {
-        margin-right: 50px;
-    }
-
-    .flex-align {
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
-    }
-
     img.header-image {
-        height: auto;
-        width: 100%;
+      height: auto;
+      width: 100%;
+    }
+
+    body {
+      font-size: 1.2em
+    }
+
+    .headshot-container {
+      flex-direction: row;
     }
 
 }
 
 @media (min-width: 960px){
-    body {
-        font-size: 1.25em;
+    div.image-hide {
+      display: block;
     }
 
-    div.image-hide {
-        display: block;
+    .headshot {
+      margin-right: 50px;
+    }
+
+    .flex-align {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
     }
 
      .flex-map, .flex-container{
-        flex-direction: row;
+      flex-direction: row;
     }
     
     .card {
-        margin-left: 2rem;
+      margin-left: 2rem;
     }
 
     .cite {
-    padding:4px 6px;
-    font-size:12px;
-    line-height:1.2;
+      padding:4px 6px;
+      font-size:12px;
+      line-height:1.2;
     }
 
 }
