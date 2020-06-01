@@ -27,7 +27,7 @@ export class MakeMap extends Component {
       let renderedLocations = locations.map((point) => {
         let coord = point.coordinates;
         return (
-          <Marker key={point.number} position={coord} onCLick={() => this.handleClick(point)}></Marker>
+          <Marker key={point.key} position={coord} onCLick={() => this.handleClick(point)}></Marker>
         );
       });
       return renderedLocations;

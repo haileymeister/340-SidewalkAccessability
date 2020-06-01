@@ -14,15 +14,16 @@ export class MakeCard extends Component {
     //console.log('makecard', this.props.locationData);
 
     let contentToRender = [];
-    if (this.props.locationData.hasOwnProperty('address')) {
+    //console.log(this.props.locationData)
+    if (this.props.locationData.hasOwnProperty('severity')) {
+      let addressStr = "Address: " + this.props.locationData.address;
+      let problemStr = "Sidewalk Problem: " + this.props.locationData.problem;
+      let severityStr = "Severity: " + this.props.locationData.severity;
+      contentToRender.push(addressStr, problemStr, severityStr);
+    } else {
       let addressStr = "Address: " + this.props.locationData.address;
       let problemStr = "Sidewalk Problem: " + this.props.locationData.problem;
       contentToRender.push(addressStr, problemStr);
-    } else {
-      let neighborhoodStr = "Neighborhood: " + this.props.locationData.neighborhood;
-      let problemStr = "Sidewalk Problem: " + this.props.locationData.problem;
-      let severityStr = "Severity: " + this.props.locationData.severity;
-      contentToRender.push(neighborhoodStr, problemStr, severityStr);
     }
     //console.log(contentToRender);
     

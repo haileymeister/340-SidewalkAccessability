@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { MakeCard } from "./Cards";
-import {FormSection} from './Form';
-import {MakeMap} from './MakeMap';
-
+import firebase from 'firebase/app';
+import 'firebase/database';
 import "whatwg-fetch";
+
+import { MakeCard } from "./Cards";
+import { FormSection } from './Form';
+import { MakeMap } from './MakeMap';
 
 export class MapData extends Component {
   constructor(props) {
@@ -18,32 +20,60 @@ export class MapData extends Component {
   }
 
   componentDidMount() {
-    let allData = [];
-
-    fetch("data/access_attr_with_labels.json")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        data.features.forEach(function (point) {
-          let type = point.properties.label_type;
-          let problem = type.replace(/([^A-Z])([A-Z])/g, "$1 $2").trim();
-          let severity = point.properties.severity;
-          if (severity === null) {
-            severity = "not noted";
-          }
-
-          let locationData = {
-            number: allData.length,
-            coordinates: [point.geometry.coordinates[1], point.geometry.coordinates[0]],
-            neighborhood: point.properties.neighborhood,
-            problem: problem,
-            severity: severity
-          };
-          allData.push(locationData);
-        });
-        this.setState( {locations: allData} );
+    let locationRef = firebase.database().ref('locations');
+    locationRef.on('value', (snapshot) => {
+      let value = snapshot.val();
+      let keys = Object.keys(value);
+      let locations = keys.map((key) => {
+        return {key: key, ...value[key] }
       });
+      this.setState({locations: locations})
+    });
+    // let allData = [];
+
+    // fetch("data/access_attr_with_labels.json")
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     //console.log(firebase)
+    //     data.features.forEach(function (point) {
+    //       //console.log(firebase)
+    //       console.log(point)
+    //       let coordinates = [point.geometry.coordinates[1], point.geometry.coordinates[0]];
+    //       let type = point.properties.label_type;
+    //       let problem = type.replace(/([^A-Z])([A-Z])/g, "$1 $2").trim();
+    //       let severity = point.properties.severity;
+    //       if (severity === null) {
+    //         severity = "not noted";
+    //       }
+
+    //       let url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + coordinates.toString() + '&key=AIzaSyB4rr7XG9Pd1n0LYtuAUsEomezPNaubrDA';
+
+    //       fetch(url) 
+    //       .then( (response) => {
+    //         return response.json();
+    //       })
+    //       .then( (data) => {
+    //         let address = data.results[0].formatted_address;
+    //         let coordString = coordinates.toString().replace(",", " ").replace(".", "").replace(".", "");
+
+    //         firebase.database().ref('locations').child(coordString).set( {
+    //           address: address,
+    //           coordinates: coordinates,
+    //           neighborhood: point.properties.neighborhood,
+    //           problem: problem,
+    //           severity: severity
+    //         }).catch(error => console.log(error));
+    //       })
+          
+    //     });
+    //   });
+  }
+
+  componentWillUnmount() {
+    let locationRef = firebase.database().ref('locations');
+    locationRef.off()
   }
 
   getNewLocation = (address, problem) => {
@@ -70,19 +100,31 @@ export class MapData extends Component {
                 problem: problem,
               }
             
+            console.log('push')
+            let coordString = coordinates.toString().replace(",", " ").replace(".", "").replace(".", "");
+
+            firebase.database().ref('locations').child(coordString).set( {
+              coordinates: coordinates,
+              address: point.formatted_address,
+              problem: problem
+            } );
+            
           });
+
           let newState = currentState.concat(newLocation);
           this.setState( {
             locations: newState,
             validAddress: true
           } );
-
+          
         } else {
           this.setState( {validAddress: false} );
         }
       })
 
   };
+
+  
 
   setCardState = (location) => {
     this.setState( {
