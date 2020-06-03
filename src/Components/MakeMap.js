@@ -22,10 +22,9 @@ export default class MakeMap extends Component {
   }
 
   makeMarkers = (locations) => {
-    //If it is the last bookmark bail
-    console.log('locations', locations)
+    console.log("If it is the last bookmark hide card")
+    //console.log('locations', locations)
     if (locations.length > 0) {
-      console.log(locations.length)
       let renderedLocations = locations.map((point) => {
         let coord = point.coordinates;
         return (

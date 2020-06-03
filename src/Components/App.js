@@ -15,11 +15,9 @@ export class App extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = {user: undefined}
   }
-
-  // Sign in code from Tim Carsons database lecture recall demo
-
 
   componentDidMount() {
     this.authUnSubFunction = firebase.auth().onAuthStateChanged( (firebaseUser) => {
@@ -37,7 +35,6 @@ export class App extends Component {
     this.authUnSubFunction();
     //this.turnOffListenerFunction();
   }
-
 
 
   render(){

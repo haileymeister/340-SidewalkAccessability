@@ -16,6 +16,7 @@ export default class MakeCard extends Component {
     }
 
   render(){
+    //console.log('cards', this.props)
 
     let contentToRender = [];
 

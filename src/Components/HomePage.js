@@ -3,14 +3,7 @@ import MapData from "./Map";
 import ImageCite from "./ImgCite";
 
 export default class HomePage extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      locations: [],
-    }
-  }
-
+  
   componentDidMount() {
     // https://github.com/PaulLeCam/react-leaflet/issues/453#issuecomment-541142178
     // Fix for weird bug that happens when you import the CSS file directly into your JS

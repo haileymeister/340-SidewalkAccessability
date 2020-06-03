@@ -39,10 +39,10 @@ export default class FormSection extends Component {
     let error = '';
 
     if ( this.state.street === '' || this.state.city === '' || this.state.state === '' || this.state.zipcode === '' || this.state.problem === ''){
-      error = <p><strong>Please fill in all feilds.</strong></p>;
+      error = <p><strong>Please fill in all fields.</strong></p>;
       this.setState( {errorMessage: error, disabled: true} );
     } else if (this.state.problem === 'Other' && this.state.otherText === ''){
-      error = <p><strong>Please fill in the other feild.</strong></p>;
+      error = <p><strong>Please fill in the other field.</strong></p>;
       this.setState({disabled: false, errorMessage: error});
 
     } else {
@@ -73,7 +73,6 @@ export default class FormSection extends Component {
       return (<p id="failed" className="alert alert-danger">Address may not be valid. Try again.</p>)
     }
   }
-
 
 
   render() {

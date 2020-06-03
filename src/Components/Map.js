@@ -25,9 +25,10 @@ export default class MapData extends Component {
     };
   }
 
+  locationRef = firebase.database().ref('locations');
+
   componentDidMount() {
-    let locationRef = firebase.database().ref('locations');
-    locationRef.on('value', (snapshot) => {
+    this.locationRef.on('value', (snapshot) => {
       let value = snapshot.val();
       let keys = Object.keys(value);
       let locations = keys.map((key) => {
@@ -38,8 +39,7 @@ export default class MapData extends Component {
   }
 
   componentWillUnmount() {
-    let locationRef = firebase.database().ref('locations');
-    locationRef.off()
+    this.locationRef.off()
   }
 
   getNewLocation = (address, problem) => {
@@ -171,43 +171,3 @@ export default class MapData extends Component {
   }
 }
 
-// let allData = [];
-
-    // fetch("data/access_attr_with_labels.json")
-    //   .then((response) => {
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     //console.log(firebase)
-    //     data.features.forEach(function (point) {
-    //       //console.log(firebase)
-    //       console.log(point)
-    //       let coordinates = [point.geometry.coordinates[1], point.geometry.coordinates[0]];
-    //       let type = point.properties.label_type;
-    //       let problem = type.replace(/([^A-Z])([A-Z])/g, "$1 $2").trim();
-    //       let severity = point.properties.severity;
-    //       if (severity === null) {
-    //         severity = "not noted";
-    //       }
-
-    //       let url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + coordinates.toString() + '&key=AIzaSyB4rr7XG9Pd1n0LYtuAUsEomezPNaubrDA';
-
-    //       fetch(url) 
-    //       .then( (response) => {
-    //         return response.json();
-    //       })
-    //       .then( (data) => {
-    //         let address = data.results[0].formatted_address;
-    //         let coordString = coordinates.toString().replace(",", " ").replace(".", "").replace(".", "");
-
-    //         firebase.database().ref('locations').child(coordString).set( {
-    //           address: address,
-    //           coordinates: coordinates,
-    //           neighborhood: point.properties.neighborhood,
-    //           problem: problem,
-    //           severity: severity
-    //         }).catch(error => console.log(error));
-    //       })
-          
-    //     });
-    //   });
