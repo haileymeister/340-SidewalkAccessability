@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Map, TileLayer, Marker } from "react-leaflet";
 
 
-export class MakeMap extends Component {
+export default class MakeMap extends Component {
   constructor(props) {
     super(props);
 
@@ -22,14 +22,17 @@ export class MakeMap extends Component {
   }
 
   makeMarkers = (locations) => {
-    //Need to see if there are bookmarks then execute otherwise bail
+    //If it is the last bookmark bail
+    console.log('locations', locations)
     if (locations.length > 0) {
+      console.log(locations.length)
       let renderedLocations = locations.map((point) => {
         let coord = point.coordinates;
         return (
           <Marker key={point.key} position={coord} onCLick={() => this.handleClick(point)}></Marker>
         );
       });
+      console.log(renderedLocations)
       return renderedLocations;
     }
   };

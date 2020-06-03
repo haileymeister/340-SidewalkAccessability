@@ -4,11 +4,11 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 
-import { NavBar } from './NavBar';
-import { SignIn } from './SignIn';
-import {HomePage} from './HomePage';
-import {AboutPage} from './AboutPage';
-import {Footer} from './Footer';
+import NavBar from './NavBar';
+import SignIn from './SignIn';
+import HomePage from './HomePage';
+import AboutPage from './AboutPage';
+import Footer from './Footer';
 
 
 export class App extends Component {

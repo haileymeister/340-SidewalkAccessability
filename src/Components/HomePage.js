@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { MapData } from "./Map";
-import { ImageCite } from "./ImgCite";
+import MapData from "./Map";
+import ImageCite from "./ImgCite";
 
-export class HomePage extends Component {
+export default class HomePage extends Component {
   constructor(props){
     super(props);
 

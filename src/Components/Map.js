@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import {Route, Switch} from 'react-router-dom';
 import firebase from 'firebase/app';
 import { faBookmark as bookmarkSolid} from '@fortawesome/free-solid-svg-icons';
-import {faBookmark as bookmarkReg} from '@fortawesome/free-regular-svg-icons';
+import { faBookmark as bookmarkReg } from '@fortawesome/free-regular-svg-icons';
 import 'firebase/database';
 import "whatwg-fetch";
 
-import { MakeCard } from "./Cards";
-import { FormSection } from './Form';
-import { MakeMap } from './MakeMap';
-import { Bookmarked } from './Bookmarked';
-import { MapNav } from './MapNav';
+import MakeCard from "./Cards";
+import FormSection from './Form';
+import MakeMap from './MakeMap';
+import Bookmarked from './Bookmarked';
+import MapNav from './MapNav';
 
-export class MapData extends Component {
+export default class MapData extends Component {
   constructor(props) {
     super(props);
 
@@ -111,14 +111,15 @@ export class MapData extends Component {
     let userKey = this.props.user.email.replace(/[^a-zA-Z0-9]/g, "");
     let userRef = firebase.database().ref('userBookmarks').child(userKey);
     let key = locationData.coordinates.toString().replace(".", ""). replace(".", "").replace(",", " ");
-    if (this.state.bookmark === bookmarkReg){
+    if (!locationData.bookmarked){
       this.setState( {bookmark: bookmarkSolid} );
       locationData.bookmarked = true;
-      userRef.set( {[key] : locationData} );      
+      userRef.child(key).update(locationData);      
     } else {
       this.setState( {bookmark: bookmarkReg} )
       locationData.bookmarked = false;
-      userRef.child(locationData.key).remove();
+      userRef.child(key).remove();
+      
     }    
   }
 

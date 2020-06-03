@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export class ImageCite extends Component {
+export default class ImageCite extends Component {
 
   
   render(){

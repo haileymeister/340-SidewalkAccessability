@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import {ImageCite} from './ImgCite';
+import ImageCite from './ImgCite';
 
-export class AboutPage extends Component {
+export default class AboutPage extends Component {
   render(){
 
     return (

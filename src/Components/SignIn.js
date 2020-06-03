@@ -3,7 +3,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
-export class SignIn extends Component {
+export default class SignIn extends Component {
 
   uiConfig = {
     signInOptions: [

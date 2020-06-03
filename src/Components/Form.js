@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ImageCite } from "./ImgCite";
+import ImageCite from "./ImgCite";
 
-export class FormSection extends Component {
+export default class FormSection extends Component {
   constructor(props) {
     super(props);
 

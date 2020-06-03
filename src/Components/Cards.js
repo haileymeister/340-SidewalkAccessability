@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark as bookmarkSolid} from '@fortawesome/free-solid-svg-icons';
-import {faBookmark as bookmarkReg} from '@fortawesome/free-regular-svg-icons';
+import { faBookmark as bookmarkReg } from '@fortawesome/free-regular-svg-icons';
 
 
 
 
-export class MakeCard extends Component {
+export default class MakeCard extends Component {
 
   makeParagraphs = (contentArr) => {
       let cards = contentArr.map( (string) => {

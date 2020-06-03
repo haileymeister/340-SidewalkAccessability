@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-export class MapNav extends Component {
+export default class MapNav extends Component {
   render(){
     return(
       <nav className="navbar navbar-expand-sm navbar-light">

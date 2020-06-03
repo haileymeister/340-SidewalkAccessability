@@ -4,7 +4,7 @@ import { faAccessibleIcon } from '@fortawesome/free-brands-svg-icons';
 import { NavLink } from 'react-router-dom';
 
 
-export class NavBar extends Component {
+export default class NavBar extends Component {
     render(){
       return (
         <header>
