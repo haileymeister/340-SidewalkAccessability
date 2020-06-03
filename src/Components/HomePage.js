@@ -23,7 +23,7 @@ export default class HomePage extends Component {
       <main>
         <section>
           <div className="image-box">
-            <img src="img/top-stock.jpg" alt="Seattle skyline at dusk" className="header-image"
+            <img src="../img/top-stock.jpg" alt="Seattle skyline at dusk" className="header-image"
             ></img>
             <ImageCite
               name="Zhifei Zhou"

@@ -207,7 +207,7 @@ export default class FormSection extends Component {
           <div className="flex-item">
             <div className="image-box image-hide">
               <img
-                src="img/bricks.jpeg"
+                src="../img/bricks.jpeg"
                 alt="sidewalk with jagged bricks"
                 className="flex-image"
               ></img>

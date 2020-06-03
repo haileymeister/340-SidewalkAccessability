@@ -31,7 +31,6 @@ export default class MakeMap extends Component {
           <Marker key={point.key} position={coord} onCLick={() => this.handleClick(point)}></Marker>
         );
       });
-      console.log(renderedLocations)
       return renderedLocations;
     }
   };

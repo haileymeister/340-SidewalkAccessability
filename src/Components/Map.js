@@ -11,6 +11,7 @@ import FormSection from './Form';
 import MakeMap from './MakeMap';
 import Bookmarked from './Bookmarked';
 import MapNav from './MapNav';
+import HomePage from "./HomePage";
 
 export default class MapData extends Component {
   constructor(props) {
@@ -171,3 +172,5 @@ export default class MapData extends Component {
   }
 }
 
+// image routing one is /home/img/bricks
+// the other is /img/bricks

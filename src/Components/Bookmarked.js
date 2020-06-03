@@ -24,7 +24,7 @@ export default class Bookmarked extends Component {
         if (value !== null){
           let keys = Object.keys(value);
           let locations = keys.map((key) => {
-            console.log(key)
+            //console.log(key)
             return {key: key, ...value[key] }
           });
           this.setState({locations: locations})
@@ -44,7 +44,6 @@ export default class Bookmarked extends Component {
 
   render(){
     if(this.props.user){
-      console.log('figure out how to make card disapear', this.state.locations)
       return <MakeMap locations={this.state.locations} setCardState={this.props.setCardState} hideCard={this.props.hideCard} handleBookmark={this.props.handleBookmark}/>;
     } else {
        return <p className="alert alert-warning"><NavLink to="/sign-in">Sign-in</NavLink> to see bookmarked data</p>
