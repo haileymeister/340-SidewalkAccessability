@@ -18,7 +18,7 @@
     overflow: visible;
 }
 
-.navbar {
+.navbar-head {
     background-color: #93c6d6;
     /* padding: 0; */
 }
@@ -31,10 +31,6 @@
   padding-bottom: 1em;
   cursor: pointer;
 }
-
-/* nav ul {
-  background-color: #afdae9;
-} */
 
 
 .nav-title {
@@ -145,6 +141,7 @@ img.header-image{
     min-height: 500px;
 }
 
+
 /*              Card View               */
 
 .cards {
@@ -164,6 +161,16 @@ img.header-image{
   /* width: 400px; */
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23) 
+}
+
+.bookmark {
+  padding: 1em;
+  right: 0px;
+}
+
+span.bookmark > svg {
+  float: right;
+  font-size: 1.25em;
 }
 
 /*              Form Styling            */
@@ -243,6 +250,10 @@ div.image-box {
 
 .submit-button:disabled {
     background-color: #3F8095;
+}
+
+.btn {
+  background-color: #93c6d6;
 }
 
 /*              Footer Styling          */

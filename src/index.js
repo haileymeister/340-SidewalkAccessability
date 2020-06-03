@@ -10,7 +10,7 @@ import { BrowserRouter } from 'react-router-dom';
 import firebase from 'firebase/app';
 
 // Your web app's Firebase configuration
-  var firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyCD7jraQP4_YueCAxE9-C3q9cTsIzuEPIM",
     authDomain: "sidewalk-accessibility.firebaseapp.com",
     databaseURL: "https://sidewalk-accessibility.firebaseio.com",
@@ -22,7 +22,6 @@ import firebase from 'firebase/app';
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  //firebase.analytics();
 
 ReactDOM.render(
   <React.StrictMode>
@@ -33,7 +32,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();

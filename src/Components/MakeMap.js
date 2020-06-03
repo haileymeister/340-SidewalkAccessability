@@ -17,12 +17,12 @@ export class MakeMap extends Component {
     this.props.setCardState(location);
   };
 
-  handleMapClick = () => {
-    this.props.mapClick();
+  handleHideCard = () => {
+    this.props.hideCard();
   }
 
   makeMarkers = (locations) => {
-    //console.log("Make marker")
+    //Need to see if there are bookmarks then execute otherwise bail
     if (locations.length > 0) {
       let renderedLocations = locations.map((point) => {
         let coord = point.coordinates;
@@ -31,12 +31,12 @@ export class MakeMap extends Component {
         );
       });
       return renderedLocations;
-    } 
+    }
   };
 
   render() {
     return (
-      <Map center={[this.state.lat, this.state.lng]} zoom={this.state.zoom} onCLick={this.handleMapClick}>
+      <Map center={[this.state.lat, this.state.lng]} zoom={this.state.zoom} onCLick={this.handleHideCard}>
         {/* If I want to use mapbox tiles https://stackoverflow.com/questions/42765309/render-mapbox-vector-tiles-inside-react-leaflet */}
         <TileLayer
           url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

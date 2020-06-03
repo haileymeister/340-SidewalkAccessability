@@ -1,4 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookmark as bookmarkSolid} from '@fortawesome/free-solid-svg-icons';
+import {faBookmark as bookmarkReg} from '@fortawesome/free-regular-svg-icons';
+
+
+
 
 export class MakeCard extends Component {
 
@@ -11,10 +17,8 @@ export class MakeCard extends Component {
 
   render(){
 
-    //console.log('makecard', this.props.locationData);
-
     let contentToRender = [];
-    //console.log(this.props.locationData)
+
     if (this.props.locationData.hasOwnProperty('severity')) {
       let addressStr = "Address: " + this.props.locationData.address;
       let problemStr = "Sidewalk Problem: " + this.props.locationData.problem;
@@ -25,11 +29,24 @@ export class MakeCard extends Component {
       let problemStr = "Sidewalk Problem: " + this.props.locationData.problem;
       contentToRender.push(addressStr, problemStr);
     }
-    //console.log(contentToRender);
+
+    let bookmark = null;
+    if (this.props.user){
+      console.log(this.props)
+      if (this.props.locationData.bookmarked){
+        bookmark = (<span onClick={this.props.handleBookmark} className='bookmark' aria-hidden='true'><FontAwesomeIcon icon={bookmarkSolid} /></span>);
+      } else {
+        bookmark = (<span onClick={this.props.handleBookmark} className='bookmark' aria-hidden='true'><FontAwesomeIcon icon={bookmarkReg} /></span>);
+      }
+    } else {
+      bookmark = null;
+    }
     
+
     return (
       <div className="cards">
         <div className="card" id="cardID">
+          {bookmark}
           {this.makeParagraphs(contentToRender)}
         </div>
       </div>

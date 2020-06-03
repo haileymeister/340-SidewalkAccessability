@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAccessibleIcon } from '@fortawesome/free-brands-svg-icons'
-import {NavLink} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAccessibleIcon } from '@fortawesome/free-brands-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 
 export class NavBar extends Component {
     render(){
       return (
         <header>
-          <nav className="navbar navbar-expand-lg navbar-light" role="navigation">
+          <nav className="navbar navbar-head navbar-expand-lg navbar-light" role="navigation">
             <div>
               <a href="#main-content" className="skip-link">Skip to main content</a>
             </div>
@@ -21,10 +21,13 @@ export class NavBar extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink exact className="nav-link" activeClassName="active" to="/">Home</NavLink>
+                  <NavLink className="nav-link" activeClassName="active" to="/">Home</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" activeClassName="active" to="/about">About</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" activeClassName="active" to="/sign-in">Sign In</NavLink>
                 </li>
               </ul>
             </div>

@@ -7,7 +7,7 @@ export class HomePage extends Component {
     super(props);
 
     this.state = {
-      locations: []
+      locations: [],
     }
   }
 
@@ -21,12 +21,12 @@ export class HomePage extends Component {
       iconUrl: require("leaflet/dist/images/marker-icon.png"),
       shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
     });
+
   }
 
 
   render() {
     return (
-
       <main>
         <section>
           <div className="image-box">
@@ -47,14 +47,12 @@ export class HomePage extends Component {
             <p>
               View and record sidewalk accessibility accross the Greater
               Seattle area. Click the marker icons on the map for more
-              information on accessibility flaws at a location or fill out the
-              form at the bottom to contribute to the map! Check the about
-              page for more information on this project. Click on the map to hide the extra information shown on the side.
+              information on accessibility flaws at a location or fill out the form at the bottom to contribute to the map! Check the about page for more information on this project. Click on the map to hide the extra information shown on the side.
             </p>
           </div>
         </section>
 
-        <MapData />
+        <MapData user={this.props.user}/>
 
       </main>
 
