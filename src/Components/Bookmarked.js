@@ -20,7 +20,6 @@ export default class Bookmarked extends Component {
       //if there is bookmarked information then do this
       bookmarkRef.on('value', (snapshot) => {
         let value = snapshot.val();
-        console.log(value)
         if (value !== null){
           let keys = Object.keys(value);
           let locations = keys.map((key) => {

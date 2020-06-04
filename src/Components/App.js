@@ -10,6 +10,8 @@ import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import Footer from './Footer';
 
+// Edits to make after final submit: 
+// Add a way to use current location to report a problem.
 
 export class App extends Component {
 

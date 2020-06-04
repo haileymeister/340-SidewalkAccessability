@@ -68,7 +68,7 @@ export default class MapData extends Component {
               }
             
             console.log('push')
-            let coordString = coordinates.toString().replace(",", " ").replace(".", "").replace(".", "");
+            let coordString = coordinates.toString().replace(",", " ").replace('.', "").replace('.', "");
 
             firebase.database().ref('locations').child(coordString).set( {
               coordinates: coordinates,
@@ -111,7 +111,8 @@ export default class MapData extends Component {
   handleBookmark = (locationData) => {
     let userKey = this.props.user.email.replace(/[^a-zA-Z0-9]/g, "");
     let userRef = firebase.database().ref('userBookmarks').child(userKey);
-    let key = locationData.coordinates.toString().replace(".", ""). replace(".", "").replace(",", " ");
+    let key = locationData.coordinates.toString().replace('.', "").replace('.', "").replace(",", " ");
+    console.log(key)
     if (!locationData.bookmarked){
       this.setState( {bookmark: bookmarkSolid} );
       locationData.bookmarked = true;

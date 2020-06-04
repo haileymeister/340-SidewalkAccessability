@@ -22,7 +22,6 @@ export default class FormSection extends Component {
   handleChange = (event) => {
     let name = event.target.name;
     let newValue = event.target.value;
-    //console.log(name, newValue)
 
     this.setState( {[name]: newValue, disabled: false, success: null} );
   };
@@ -32,17 +31,41 @@ export default class FormSection extends Component {
     this.setState( {otherText: event.target.value, problem: event.target.value, disabled: false} );
   }
 
+  getMissingField = () => {
+    let allFields = {
+      Street: this.state.street, 
+      City: this.state.city, 
+      State: this.state.state, 
+      Zipcode: this.state.zipcode, 
+      Problem: this.state.problem
+    };
+
+    let missing = [];
+    Object.keys(allFields).map( (key) => {
+      if (allFields[key] === ""){
+        missing.push(key);
+      }
+    });
+    return missing;
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
     
+    let missingField = this.getMissingField();
     let error = '';
 
-    if ( this.state.street === '' || this.state.city === '' || this.state.state === '' || this.state.zipcode === '' || this.state.problem === ''){
-      error = <p><strong>Please fill in all fields.</strong></p>;
+    let fieldStr = 'feild';
+    if(missingField.length > 1){
+      fieldStr = 'feilds';
+    }
+
+    if (missingField.length > 0){
+      let missingStr = missingField.toString().replace(/,/g, ', ').replace(/,([^,]*)$/,'\, and$1');
+      error = <p className="alert alert-danger"><strong>Please fill in the {missingStr} {fieldStr}.</strong></p>;
       this.setState( {errorMessage: error, disabled: true} );
     } else if (this.state.problem === 'Other' && this.state.otherText === ''){
-      error = <p><strong>Please fill in the other field.</strong></p>;
+      error = <p className="alert alert-danger"><strong>Please fill in the other text field.</strong></p>;
       this.setState({disabled: false, errorMessage: error});
 
     } else {
@@ -81,10 +104,10 @@ export default class FormSection extends Component {
         <div className="flex-container">
           <div className="flex-item">
             {this.successMessage()}
+            {this.state.errorMessage}
             <form id="input-form">
               <div className="form-group">
                 <h3 className="form-header">Address</h3>
-                {this.state.errorMessage}
                 <label htmlFor="street" id="street-lab">
                   Street
                 </label>{" "}
