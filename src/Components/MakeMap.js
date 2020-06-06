@@ -26,6 +26,7 @@ export default class MakeMap extends Component {
     if (locations.length > 0) {
       let renderedLocations = locations.map((point) => {
         let coord = point.coordinates;
+        
         let key = '';
         if(point.key === undefined){
           key = coord.toString().replace('.', '').replace('.', '').replace(',', ' ');

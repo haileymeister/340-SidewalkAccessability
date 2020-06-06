@@ -4,8 +4,6 @@ import { faBookmark as bookmarkSolid} from '@fortawesome/free-solid-svg-icons';
 import { faBookmark as bookmarkReg } from '@fortawesome/free-regular-svg-icons';
 
 
-
-
 export default class MakeCard extends Component {
 
   makeParagraphs = (contentArr) => {
@@ -19,12 +17,12 @@ export default class MakeCard extends Component {
     //console.log('cards', this.props)
 
     let contentToRender = [];
-
     if (this.props.locationData.hasOwnProperty('severity')) {
       let addressStr = "Address: " + this.props.locationData.address;
+      let neighborhoodStr = "Neighborhood: " + this.props.locationData.neighborhood;
       let problemStr = "Sidewalk Problem: " + this.props.locationData.problem;
       let severityStr = "Severity: " + this.props.locationData.severity;
-      contentToRender.push(addressStr, problemStr, severityStr);
+      contentToRender.push(addressStr, neighborhoodStr, problemStr, severityStr);
     } else {
       let addressStr = "Address: " + this.props.locationData.address;
       let problemStr = "Sidewalk Problem: " + this.props.locationData.problem;
@@ -33,11 +31,16 @@ export default class MakeCard extends Component {
 
     let bookmark = null;
     if (this.props.user){
-      console.log('cards', this.props.locationData)
+      //console.log('cards', this.props.locationData)
+      
+      //getting bookmarked is true even after unbookmarked in bookmarked section
+      //gets its information from makeCard in map
       if (this.props.locationData.bookmarked){
-        bookmark = (<span onClick={this.props.handleBookmark} className='bookmark' aria-hidden='true'><FontAwesomeIcon icon={bookmarkSolid} /></span>);
+        console.log('bookmarked')
+        bookmark = (<span onClick={() => this.props.handleBookmark(this.props.locationData)} className='bookmark' aria-hidden='true'><FontAwesomeIcon icon={bookmarkSolid} /></span>);
       } else {
-        bookmark = (<span onClick={this.props.handleBookmark} className='bookmark' aria-hidden='true'><FontAwesomeIcon icon={bookmarkReg} /></span>);
+        console.log('unbookmarked')
+        bookmark = (<span onClick={() => this.props.handleBookmark(this.props.locationData)} className='bookmark' aria-hidden='true'><FontAwesomeIcon icon={bookmarkReg} /></span>);
       }
     } else {
       bookmark = null;

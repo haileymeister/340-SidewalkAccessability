@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import {Route, Switch} from 'react-router-dom';
 import firebase from 'firebase/app';
-import { faBookmark as bookmarkSolid} from '@fortawesome/free-solid-svg-icons';
-import { faBookmark as bookmarkReg } from '@fortawesome/free-regular-svg-icons';
 import 'firebase/database';
 import "whatwg-fetch";
 
@@ -21,7 +19,6 @@ export default class MapData extends Component {
       showCard: false, 
       clickedLocationData: [],
       validAddress: null,
-      bookmark: bookmarkReg,
     };
   }
 
@@ -104,13 +101,15 @@ export default class MapData extends Component {
   }
 
   makeCard = (clickedLocation) => {
+    //gets its information from the clicked location state
+    // so state must not be updated when the bookmark is clicked on bookmark tab?
     if(this.state.showCard){
+      console.log(this.state.clickedLocationData)
       return <MakeCard locationData={clickedLocation} handleBookmark={() => {this.handleBookmark(clickedLocation)}} user={this.props.user}/>
     }
   }
 
   handleBookmark = (locationData) => {
-    console.log('handle')
     let userKey = this.props.user.email.replace(/[^a-zA-Z0-9]/g, "");
     let userRef = firebase.database().ref('userBookmarks').child(userKey);
     let key = '';
@@ -120,17 +119,20 @@ export default class MapData extends Component {
     } else {
       key = locationData.key;
     }
-    console.log('before', locationData)
+    console.log('location', locationData)
     if (!locationData.bookmarked){
-      this.setState( {bookmark: bookmarkSolid} );
+      console.log('------if-------')
+      console.log('state', this.state.clickedLocationData)
       locationData.bookmarked = true;
+      this.setState( {clickedLocationData: locationData} )
       userRef.child(key).update(locationData);      
     } else {
-      this.setState( {bookmark: bookmarkReg} )
+      console.log('-------else-------')
+      console.log('state', this.state.clickedLocationData)
       locationData.bookmarked = false;
+      this.setState( {clickedLocationData: locationData} )
       userRef.child(key).remove();
     }  
-    console.log('after', locationData)
   }
 
   render() {
@@ -156,7 +158,6 @@ export default class MapData extends Component {
                   <Route path='/home/bookmarked' render={ (renderProps) => 
                   (<Bookmarked {...renderProps} 
                     user={this.props.user} 
-                    bookmark={this.state.bookmark}
                     setCardState={this.setCardState} 
                     hideCard={this.hideCard}/>)}
                   />
