@@ -19,6 +19,7 @@ export default class MapData extends Component {
       showCard: false, 
       clickedLocationData: [],
       validAddress: null,
+      newLocation: null,
     };
   }
 
@@ -77,7 +78,8 @@ export default class MapData extends Component {
           let newState = currentState.concat(newLocation);
           this.setState( {
             locations: newState,
-            validAddress: true
+            validAddress: true,
+            newLocation: newLocation,
           } );
           
         } else {
@@ -164,7 +166,8 @@ export default class MapData extends Component {
                   (<MakeMap {...renderProps} 
                     locations={this.state.locations} 
                     setCardState={this.setCardState} 
-                    hideCard={this.hideCard}/>)}
+                    hideCard={this.hideCard}
+                    center={this.state.newLocation}/>)}
                   />
                   <Route path='/home/bookmarked' render={ (renderProps) => 
                   (<Bookmarked {...renderProps} 

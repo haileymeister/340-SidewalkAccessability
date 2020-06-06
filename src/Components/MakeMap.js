@@ -34,7 +34,7 @@ export default class MakeMap extends Component {
         }
 
         return (
-          <Marker key={key} position={coord} onCLick={() => this.handleClick(point)}></Marker>
+          <Marker key={key + ' ' + point.problem} position={coord} onCLick={() => this.handleClick(point)}></Marker>
         );
       });
       return renderedLocations;
@@ -42,8 +42,13 @@ export default class MakeMap extends Component {
   };
 
   render() {
+    let center = [this.state.lat, this.state.lng];
+    if (this.props.center !== null && this.props.center !== undefined) {
+      center = this.props.center.coordinates;
+    }
+
     return (
-      <Map center={[this.state.lat, this.state.lng]} zoom={this.state.zoom} onCLick={this.handleHideCard}>
+      <Map center={center} zoom={this.state.zoom} onCLick={this.handleHideCard}>
         {/* If I want to use mapbox tiles https://stackoverflow.com/questions/42765309/render-mapbox-vector-tiles-inside-react-leaflet */}
         <TileLayer
           url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
