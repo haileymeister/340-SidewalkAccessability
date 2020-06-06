@@ -34,7 +34,6 @@ export default class Bookmarked extends Component {
         }
       });
     }
-    //console.log('bookmarkref', this.state.bookmarkRef)
   }
 
   componentWillUnmount() {
@@ -45,7 +44,7 @@ export default class Bookmarked extends Component {
 
   render(){
     if(this.props.user){
-      return <MakeMap locations={this.state.bookmarkedLocations} setCardState={this.props.setCardState} hideCard={this.props.hideCard} />;
+      return <MakeMap locations={this.state.bookmarkedLocations} setCardState={this.props.setCardState} hideCard={this.props.hideCard}/>;
     } else {
        return <p className="alert alert-warning"><NavLink to="/sign-in">Sign-in</NavLink> to see bookmarked data</p>
     } 

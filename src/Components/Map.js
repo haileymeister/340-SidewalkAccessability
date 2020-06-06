@@ -102,36 +102,47 @@ export default class MapData extends Component {
 
   makeCard = (clickedLocation) => {
     //gets its information from the clicked location state
-    // so state must not be updated when the bookmark is clicked on bookmark tab?
+
     if(this.state.showCard){
-      console.log(this.state.clickedLocationData)
       return <MakeCard locationData={clickedLocation} handleBookmark={() => {this.handleBookmark(clickedLocation)}} user={this.props.user}/>
     }
   }
 
   handleBookmark = (locationData) => {
+    // Get updated information
+    this.locationRef.on('value', (snapshot) => {
+      let value = snapshot.val();
+      let keys = Object.keys(value);
+      let locations = keys.map((key) => {
+        return {key: key, ...value[key] }
+      });
+      this.setState({locations: locations})
+    });
+
     let userKey = this.props.user.email.replace(/[^a-zA-Z0-9]/g, "");
     let userRef = firebase.database().ref('userBookmarks').child(userKey);
     let key = '';
+
     //If its a new point then use this
     if (locationData.key === undefined){
       key = locationData.coordinates.toString().replace(",", " ").replace(".", "").replace(".", "");
     } else {
       key = locationData.key;
     }
-    console.log('location', locationData)
+
     if (!locationData.bookmarked){
-      console.log('------if-------')
-      console.log('state', this.state.clickedLocationData)
       locationData.bookmarked = true;
       this.setState( {clickedLocationData: locationData} )
       userRef.child(key).update(locationData);      
     } else {
-      console.log('-------else-------')
-      console.log('state', this.state.clickedLocationData)
       locationData.bookmarked = false;
       this.setState( {clickedLocationData: locationData} )
       userRef.child(key).remove();
+
+      // Hide the card if unbookmarked in bookmarked section
+      if(window.location.href.includes('/bookmarked')){
+        this.hideCard();
+      }
     }  
   }
 
@@ -180,6 +191,3 @@ export default class MapData extends Component {
     );
   }
 }
-
-// image routing one is /home/img/bricks
-// the other is /img/bricks

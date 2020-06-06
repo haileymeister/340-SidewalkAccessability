@@ -14,8 +14,6 @@ export default class MakeCard extends Component {
     }
 
   render(){
-    //console.log('cards', this.props)
-
     let contentToRender = [];
     if (this.props.locationData.hasOwnProperty('severity')) {
       let addressStr = "Address: " + this.props.locationData.address;
@@ -31,15 +29,9 @@ export default class MakeCard extends Component {
 
     let bookmark = null;
     if (this.props.user){
-      //console.log('cards', this.props.locationData)
-      
-      //getting bookmarked is true even after unbookmarked in bookmarked section
-      //gets its information from makeCard in map
       if (this.props.locationData.bookmarked){
-        console.log('bookmarked')
         bookmark = (<span onClick={() => this.props.handleBookmark(this.props.locationData)} className='bookmark' aria-hidden='true'><FontAwesomeIcon icon={bookmarkSolid} /></span>);
       } else {
-        console.log('unbookmarked')
         bookmark = (<span onClick={() => this.props.handleBookmark(this.props.locationData)} className='bookmark' aria-hidden='true'><FontAwesomeIcon icon={bookmarkReg} /></span>);
       }
     } else {
