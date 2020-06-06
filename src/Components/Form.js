@@ -33,11 +33,11 @@ export default class FormSection extends Component {
 
   getMissingField = () => {
     let allFields = {
-      Street: this.state.street, 
-      City: this.state.city, 
-      State: this.state.state, 
-      Zipcode: this.state.zipcode, 
-      Problem: this.state.problem
+      street: this.state.street, 
+      city: this.state.city, 
+      state: this.state.state, 
+      zipcode: this.state.zipcode, 
+      problem: this.state.problem
     };
 
     let missing = [];
@@ -45,6 +45,7 @@ export default class FormSection extends Component {
       if (allFields[key] === ""){
         missing.push(key);
       }
+      return key;
     });
     return missing;
   }
@@ -61,7 +62,7 @@ export default class FormSection extends Component {
     }
 
     if (missingField.length > 0){
-      let missingStr = missingField.toString().replace(/,/g, ', ').replace(/,([^,]*)$/,'\, and$1');
+      let missingStr = missingField.toString().replace(/,/g, ', ').replace(/,([^,]*)$/,', and$1');
       error = <p className="alert alert-danger"><strong>Please fill in the {missingStr} {fieldStr}.</strong></p>;
       this.setState( {errorMessage: error, disabled: true} );
     } else if (this.state.problem === 'Other' && this.state.otherText === ''){

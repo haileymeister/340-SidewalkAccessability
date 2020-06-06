@@ -290,7 +290,7 @@ div.image-box {
 }
 
 
-/*                 @media                */
+/*                 Responsive Breakpoints                */
 
 @media (max-width: 375px) {
     .top-header, h1, h2, h3{

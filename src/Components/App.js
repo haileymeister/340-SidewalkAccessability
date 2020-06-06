@@ -24,10 +24,8 @@ export class App extends Component {
   componentDidMount() {
     this.authUnSubFunction = firebase.auth().onAuthStateChanged( (firebaseUser) => {
       if(firebaseUser) {
-        console.log('logged in')
         this.setState( {user: firebaseUser} );
       } else {
-        console.log('logged out')
         this.setState( {user: null} );
       }
     });    

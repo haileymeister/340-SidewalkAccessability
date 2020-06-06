@@ -22,13 +22,19 @@ export default class MakeMap extends Component {
   }
 
   makeMarkers = (locations) => {
-    console.log("If it is the last bookmark hide card")
-    //console.log('locations', locations)
+    //console.log("If it is the last bookmark hide card")
     if (locations.length > 0) {
       let renderedLocations = locations.map((point) => {
         let coord = point.coordinates;
+        let key = '';
+        if(point.key === undefined){
+          key = coord.toString().replace('.', '').replace('.', '').replace(',', ' ');
+        } else {
+          key = point.key;
+        }
+
         return (
-          <Marker key={point.key} position={coord} onCLick={() => this.handleClick(point)}></Marker>
+          <Marker key={key} position={coord} onCLick={() => this.handleClick(point)}></Marker>
         );
       });
       return renderedLocations;

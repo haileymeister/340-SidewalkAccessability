@@ -33,7 +33,7 @@ export default class MakeCard extends Component {
 
     let bookmark = null;
     if (this.props.user){
-      console.log(this.props)
+      console.log('cards', this.props.locationData)
       if (this.props.locationData.bookmarked){
         bookmark = (<span onClick={this.props.handleBookmark} className='bookmark' aria-hidden='true'><FontAwesomeIcon icon={bookmarkSolid} /></span>);
       } else {

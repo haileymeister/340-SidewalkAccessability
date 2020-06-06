@@ -3,6 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAccessibleIcon } from '@fortawesome/free-brands-svg-icons';
 import { NavLink } from 'react-router-dom';
 
+// For navbar toggling 
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
+
 
 export default class NavBar extends Component {
     render(){
@@ -12,9 +16,9 @@ export default class NavBar extends Component {
             <div>
               <a href="#main-content" className="skip-link">Skip to main content</a>
             </div>
-            <h1 className="navbar-brand nav-title top-header">
+            <p className="navbar-brand nav-title top-header">
               <span className='pr-3' aria-hidden='true'><FontAwesomeIcon icon={faAccessibleIcon} /></span>Access Seattle
-            </h1>
+            </p>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">   
               <span className="navbar-toggler-icon"></span>
             </button>

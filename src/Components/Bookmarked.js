@@ -10,6 +10,7 @@ export default class Bookmarked extends Component {
     super(props)
     this.state = {
       locations: [],
+      bookmarkRef: null,
     }
   }
 
@@ -17,6 +18,7 @@ export default class Bookmarked extends Component {
     if (this.props.user) {
       let userKey = this.props.user.email.replace(/[^a-zA-Z0-9]/g, "");
       let bookmarkRef = firebase.database().ref('userBookmarks/' + userKey);
+      this.setState( {bookmarkRef: bookmarkRef} ); 
       //if there is bookmarked information then do this
       bookmarkRef.on('value', (snapshot) => {
         let value = snapshot.val();
@@ -32,18 +34,18 @@ export default class Bookmarked extends Component {
         }
       });
     }
+    console.log('bookmarkref', this.state.bookmarkRef)
   }
 
   componentWillUnmount() {
     if(this.props.user){
-      let bookmarkRef = firebase.database().ref('userBookmarks/' + this.props.user.email.replace(/[^a-zA-Z0-9]/g, ""));
-      bookmarkRef.off()
+      this.state.bookmarkRef.off()
     }
   }
 
   render(){
     if(this.props.user){
-      return <MakeMap locations={this.state.locations} setCardState={this.props.setCardState} hideCard={this.props.hideCard} handleBookmark={this.props.handleBookmark}/>;
+      return <MakeMap locations={this.state.locations} setCardState={this.props.setCardState} hideCard={this.props.hideCard} />;
     } else {
        return <p className="alert alert-warning"><NavLink to="/sign-in">Sign-in</NavLink> to see bookmarked data</p>
     } 

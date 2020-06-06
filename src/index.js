@@ -2,10 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'leaflet/dist/leaflet.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 import App from './Components/App';
 import './index.css';
-import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import firebase from 'firebase/app';
 
@@ -32,4 +30,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-serviceWorker.unregister();

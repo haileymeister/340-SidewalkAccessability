@@ -11,7 +11,6 @@ import FormSection from './Form';
 import MakeMap from './MakeMap';
 import Bookmarked from './Bookmarked';
 import MapNav from './MapNav';
-import HomePage from "./HomePage";
 
 export default class MapData extends Component {
   constructor(props) {
@@ -67,13 +66,13 @@ export default class MapData extends Component {
                 problem: problem,
               }
             
-            console.log('push')
             let coordString = coordinates.toString().replace(",", " ").replace('.', "").replace('.', "");
 
-            firebase.database().ref('locations').child(coordString).set( {
+            firebase.database().ref('locations').child(coordString).update( {
               coordinates: coordinates,
               address: point.formatted_address,
-              problem: problem
+              problem: problem,
+              bookmarked: false,
             } );
             
           });
@@ -88,7 +87,9 @@ export default class MapData extends Component {
           this.setState( {validAddress: false} );
         }
       })
-
+      .catch( (error) => {
+        console.log(error);
+      });
   };
 
   setCardState = (location) => {
@@ -109,10 +110,17 @@ export default class MapData extends Component {
   }
 
   handleBookmark = (locationData) => {
+    console.log('handle')
     let userKey = this.props.user.email.replace(/[^a-zA-Z0-9]/g, "");
     let userRef = firebase.database().ref('userBookmarks').child(userKey);
-    let key = locationData.coordinates.toString().replace('.', "").replace('.', "").replace(",", " ");
-    console.log(key)
+    let key = '';
+    //If its a new point then use this
+    if (locationData.key === undefined){
+      key = locationData.coordinates.toString().replace(",", " ").replace(".", "").replace(".", "");
+    } else {
+      key = locationData.key;
+    }
+    console.log('before', locationData)
     if (!locationData.bookmarked){
       this.setState( {bookmark: bookmarkSolid} );
       locationData.bookmarked = true;
@@ -121,8 +129,8 @@ export default class MapData extends Component {
       this.setState( {bookmark: bookmarkReg} )
       locationData.bookmarked = false;
       userRef.child(key).remove();
-      
-    }    
+    }  
+    console.log('after', locationData)
   }
 
   render() {
@@ -150,8 +158,7 @@ export default class MapData extends Component {
                     user={this.props.user} 
                     bookmark={this.state.bookmark}
                     setCardState={this.setCardState} 
-                    hideCard={this.hideCard}
-                    handleBookmark={this.handleBookmark}/>)}
+                    hideCard={this.hideCard}/>)}
                   />
                 </Switch>
               </div>
